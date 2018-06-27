@@ -1,0 +1,16 @@
+cd C:\windows\system32\
+
+cmd.exe
+
+
+cd C:\ajia\curl-7.54.1\bin
+
+curl -o "C:\Program Files (x86)\Jenkins\workspace\ANDailyPerfTest_STGAcm01vegas\version.html" "https://apmstg.activecommunities.com/stgacm01vegas/activenet_version"
+
+dir
+
+xcopy "C:\Program Files (x86)\Jenkins\workspace\ANDailyPerfTest_STGAcm01vegas" "C:\ajia\TestReport" /Y/S
+
+java -jar C:\ajia\GenerateSummaryReport.jar
+
+dir
