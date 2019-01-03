@@ -11,11 +11,11 @@ if "%mode%"=="local" (
 
 
 :local
-python "C:\ajia\RushPoolPYProject\RushPool_Initialing.py"
+python "C:\ajia\RushPoolPYProject\RushPool_StopService.py"
 goto end
 :remote
-python "C:\ajia\RushPoolPYProject\RushPool_Initialing.py"
-python "C:\ajia\RushPoolPYProject\RushPool_Initialing.py"
+python "C:\ajia\RushPoolPYProject\RushPool_StopCache.py"
+python "C:\ajia\RushPoolPYProject\RushPool_StopService.py"
 goto end
 :end
 exit
