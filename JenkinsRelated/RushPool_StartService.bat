@@ -11,13 +11,13 @@ if "%mode%"=="local" (
 
 
 :local
-echo "stoping..."
+echo "srarting..."
 python "C:\ajia\RushPoolPYProject\RushPool_StartService.py"
 goto end
 :remote
-echo "stoping cache..."
+echo "srarting cache..."
 python "C:\ajia\RushPoolPYProject\RushPool_StartCache.py"
-echo "stoping servlet..."
+echo "srarting servlet..."
 python "C:\ajia\RushPoolPYProject\RushPool_StartService.py"
 goto end
 :end

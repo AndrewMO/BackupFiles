@@ -23,23 +23,19 @@ def getResponse(url):
 
 
 
-
-
-
-
-
 if __name__ == '__main__' :
 
     logging.debug('start of program')
     thread = []
+    orgname = 'acm01vegasjetty'
 
 
     for i in range(1, 19):
         if (i < 10):
-            urlstr = "http://perf-activenet-0"+str(i)+"w.an.active.tan:3000/acm01vegasjetty/servlet/adminlogin.sdi"
+            urlstr = "http://perf-activenet-0"+str(i)+"w.an.active.tan:3000/"+orgname+"/servlet/adminlogin.sdi"
             # logging.debug('i is '+ str(i) + ' , url is ' + urlstr)
         else:
-            urlstr = "http://perf-activenet-"+str(i)+"w.an.active.tan:3000/acm01vegasjetty/servlet/adminlogin.sdi"
+            urlstr = "http://perf-activenet-"+str(i)+"w.an.active.tan:3000/"+orgname+"/servlet/adminlogin.sdi"
             # logging.debug('i is ' + str(i) + ' , url is ' + urlstr)
         # print(urlstr)
         # print("server  %r is initialing"  %(i))
