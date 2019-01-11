@@ -4,13 +4,12 @@ cmd.exe
 
 Taskkill /f /im NeoloadGUI.exe
 
-rmdir /s/q "C:\Program Files (x86)\Jenkins\workspace\ANDailyPerfTest_STGAcm01vegas\neoload-report"
 
 rmdir /s/q "C:\ajia\TestReport"
 
 del "C:\Program Files (x86)\Jenkins\workspace\ANDailyPerfTest_STGAcm01vegas\version.html"
 
-md "C:\Program Files (x86)\Jenkins\workspace\ANDailyPerfTest_STGAcm01vegas\neoload-report"
+del "C:\Program Files (x86)\Jenkins\workspace\ANDailyPerfTest_STGAcm01vegas\neoload-report\report.pdf"
 
 md "C:\ajia\TestReport"
 
