@@ -27,7 +27,8 @@ if __name__ == '__main__' :
 
     logging.debug('start of program')
     thread = []
-    orgname = 'perf01jetty'
+    orgname = 'acm01vegasjetty'
+
 
 
     for i in range(1, 19):
