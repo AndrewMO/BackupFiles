@@ -41,9 +41,13 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
+    orgname = "acm01vegas"
 
+    cmdString = "cd /opt/active/sites/" + orgname + "/ActiveNetServlet/config;./start_service.sh"
 
-    cmd = ['cd /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config;./stop_service.sh']  # 你要执行的命令列表
+    cmd =[]
+
+    cmd.append(cmdString)  # 你要执行的命令列表
 
     username = "deploy"  # 用户名
 
@@ -53,7 +57,7 @@ if __name__ == '__main__':
 
     print("Begin......")
 
-    for i in range(1, 19):
+    for i in range(19, 21):
 
         if i < 10:
             host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # !/usr/bin/python
-
+import sys
 
 import requests
 import threading
@@ -25,14 +25,15 @@ def getResponse(url):
 
 if __name__ == '__main__' :
 
-    # logging.debug('start of program')
+    logging.debug('start of program')
     thread = []
-    orgname = 'acm01vegasjetty'
-    count = 0
+    orgname = 'acm01vegas'
+
+    # orgname = sys.argv[1]
 
 
 
-    for i in range(1, 19):
+    for i in range(19, 21):
         if (i < 10):
             urlstr = "http://perf-activenet-0"+str(i)+"w.an.active.tan:3000/"+orgname+"/servlet/adminlogin.sdi"
             # logging.debug('i is '+ str(i) + ' , url is ' + urlstr)
@@ -43,9 +44,6 @@ if __name__ == '__main__' :
         # print("server  %r is initialing"  %(i))
         a = threading.Thread(target=getResponse, args=(urlstr,))
         a.start()
-        count += 1
-
-    print("initial %d orgs"  %(count))
 
         # logging.debug('end of program')
 

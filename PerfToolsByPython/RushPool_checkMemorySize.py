@@ -27,7 +27,7 @@ def ssh2(host, username, passwd, cmd):
 
             for o in out:
                 #print(o)
-                print("%s service status : %s" % (host, o))
+                print("%s  : %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -40,11 +40,8 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    cmd = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1']  # 你要执行的命令列表
-
-    # cmd = ['ps -ef|grep java|grep -v grep']  # 你要执行的命令列表
-
-    # cmd = ['ps -ef|grep java']  # 你要执行的命令列表
+    cmd1 = ['cat /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/service.properties | grep memorySize ']  # 你要执行的命令列表
+    cmd2 = ['cat /opt/active/sites/ignite01/ActiveNetServlet/config/service.properties | grep memorySize']  # 你要执行的命令列表
 
     username = "deploy"  # 用户名
 
@@ -61,7 +58,7 @@ if __name__ == '__main__':
         else:
             host1 = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
-        a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd))
+        a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd1))
         a.start()
 
     print("Begin......Cache")
@@ -73,5 +70,5 @@ if __name__ == '__main__':
         else:
             host2 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
-        b = threading.Thread(target=ssh2, args=(host2, username, passwd, cmd))
+        b = threading.Thread(target=ssh2, args=(host2, username, passwd, cmd2))
         b.start()

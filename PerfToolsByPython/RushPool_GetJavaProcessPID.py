@@ -28,7 +28,7 @@ def ssh2(host, username, passwd, cmd):
 
             for o in out:
                 #print(o)
-                print(" server : %s , Java process PID :  %s" % (ServerNo, o))
+                print(" server : %s , Java PID :  %s" % (ServerNo, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -48,13 +48,6 @@ if __name__ == '__main__':
     passwd = "123!deploy"  # 密码
 
     threads = []  # 多线程
-
-
-    # heapdumppath = "/opt/active/ActiveNet/perf"
-    #
-    # # cmd1 = "ps -ef |grep java | grep -v grep | grep ActiveNetServlet1 | awk '{print $2}'"  # 获取java进程pid
-    #
-    # cmd2 = "cd /usr/java/jdk8-1.8.0_31/bin" # 进入java路径
 
     print("Begin......")
 

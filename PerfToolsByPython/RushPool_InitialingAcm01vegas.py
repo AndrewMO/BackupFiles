@@ -27,8 +27,7 @@ if __name__ == '__main__' :
 
     # logging.debug('start of program')
     thread = []
-    orgname = 'acm01vegasjetty'
-    count = 0
+    orgname = 'acm01vegas'
 
 
 
@@ -43,9 +42,6 @@ if __name__ == '__main__' :
         # print("server  %r is initialing"  %(i))
         a = threading.Thread(target=getResponse, args=(urlstr,))
         a.start()
-        count += 1
-
-    print("initial %d orgs"  %(count))
 
         # logging.debug('end of program')
 

@@ -41,9 +41,7 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-
-
-    cmd = ['cd /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config;./stop_service.sh']  # 你要执行的命令列表
+    cmd = ['cd /opt/active/sites/ignite01/ActiveNetServlet/config;./start_cache.sh']  # 你要执行的命令列表'
 
     username = "deploy"  # 用户名
 
@@ -53,12 +51,12 @@ if __name__ == '__main__':
 
     print("Begin......")
 
-    for i in range(1, 19):
+    for i in range(3, 4):
 
         if i < 10:
-            host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            host = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
         else:
-            host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
         a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
         a.start()

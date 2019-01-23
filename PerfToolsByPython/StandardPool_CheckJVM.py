@@ -3,6 +3,7 @@
 # !/usr/bin/python
 
 import paramiko
+
 import threading
 
 
@@ -27,7 +28,7 @@ def ssh2(host, username, passwd, cmd):
 
             for o in out:
                 #print(o)
-                print("%s service status : %s" % (host, o))
+                print("%s service status :  %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -40,11 +41,9 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    cmd = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1']  # 你要执行的命令列表
+    cmd = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1'] # 你要执行的命令列表
 
-    # cmd = ['ps -ef|grep java|grep -v grep']  # 你要执行的命令列表
 
-    # cmd = ['ps -ef|grep java']  # 你要执行的命令列表
 
     username = "deploy"  # 用户名
 
@@ -54,24 +53,24 @@ if __name__ == '__main__':
 
     print("Begin......Servlet")
 
-    for i in range(1, 19):
+    for i in range(19, 21):
 
         if i < 10:
-            host1 = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
         else:
-            host1 = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
-        a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd))
+        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
         a.start()
 
     print("Begin......Cache")
 
-    for i in range(1, 3):
+    for i in range(3, 4):
 
         if i < 10:
-            host2 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
+            host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
         else:
-            host2 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
+            host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
-        b = threading.Thread(target=ssh2, args=(host2, username, passwd, cmd))
-        b.start()
+        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
+        a.start()
