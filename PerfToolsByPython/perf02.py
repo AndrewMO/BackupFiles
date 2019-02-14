@@ -11,8 +11,10 @@ import logging
 
 
 def getResponse(url):
-    requests.adapters.DEFAULT_RETRIES = 3
     response = requests.get(url)
+    # if response.status_code == 200:
+    #     status = 'OK'
+    # print(response.text)
     rsc = response.status_code
     serverNo = url[22:24]
 
@@ -23,10 +25,9 @@ def getResponse(url):
 
 if __name__ == '__main__' :
 
-    # logging.debug('start of program')
+    logging.debug('start of program')
     thread = []
-    orgname = 'acm01vegasjetty'
-    count = 0
+    orgname = 'perf02'
 
 
 
@@ -41,9 +42,6 @@ if __name__ == '__main__' :
         # print("server  %r is initialing"  %(i))
         a = threading.Thread(target=getResponse, args=(urlstr,))
         a.start()
-        count += 1
-
-    print("initial %d orgs"  %(count))
 
         # logging.debug('end of program')
 

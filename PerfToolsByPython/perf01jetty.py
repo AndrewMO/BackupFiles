@@ -6,13 +6,15 @@
 import requests
 import threading
 import logging
-# logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
 # logging.disable(logging.CRITICAL)
 
 
 def getResponse(url):
-    requests.adapters.DEFAULT_RETRIES = 3
     response = requests.get(url)
+    # if response.status_code == 200:
+    #     status = 'OK'
+    # print(response.text)
     rsc = response.status_code
     serverNo = url[22:24]
 
@@ -23,10 +25,9 @@ def getResponse(url):
 
 if __name__ == '__main__' :
 
-    # logging.debug('start of program')
+    logging.debug('start of program')
     thread = []
-    orgname = 'acm01vegasjetty'
-    count = 0
+    orgname = 'perf01jetty'
 
 
 
@@ -38,12 +39,9 @@ if __name__ == '__main__' :
             urlstr = "http://perf-activenet-"+str(i)+"w.an.active.tan:3000/"+orgname+"/servlet/adminlogin.sdi"
             # logging.debug('i is ' + str(i) + ' , url is ' + urlstr)
         # print(urlstr)
-        # print("server  %r is initialing"  %(i))
+        # logging.debug("server  %r is initialing" %(i))
         a = threading.Thread(target=getResponse, args=(urlstr,))
         a.start()
-        count += 1
-
-    print("initial %d orgs"  %(count))
 
         # logging.debug('end of program')
 

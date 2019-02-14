@@ -24,7 +24,7 @@ def upload(host, username, passwd,  src, des):
     except Exception as e:
 
         print('%s\t connect  error\n' %(host))
-        print("-----------ExceptLog-----------")
+        print("-----------ErrorLog-----------")
         print(e)
 
 
@@ -34,11 +34,11 @@ if __name__ == '__main__':
 
     passwd = "123!deploy"  # 密码
 
-    IgnitecacheXml_srcfile = "D:\\tmp\\0121\\AUI\\ignite-cache.xml"
+    IgnitecacheXml_srcfile = "D:\\tmp\\0128\\AUI\\ignite-cache.xml"
 
     IgnitecacheXml_desfile = "/opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/ignite-cache.xml"
 
-    ServiceProperties_srcfile = "D:\\tmp\\0121\\AUI\\service.properties"
+    ServiceProperties_srcfile = "D:\\tmp\\0128\\AUI\\service.properties"
 
     ServiceProperties_desfile = "/opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/service.properties"
 

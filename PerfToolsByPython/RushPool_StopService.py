@@ -45,6 +45,8 @@ if __name__ == '__main__':
 
     cmd = ['cd /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config;./stop_service.sh']  # 你要执行的命令列表
 
+    # cmd = ['cd /opt/active/sites/acm01vegas/ActiveNetServlet/config;./stop_service.sh']  # 你要执行的命令列表
+
     username = "deploy"  # 用户名
 
     passwd = "123!deploy"  # 密码

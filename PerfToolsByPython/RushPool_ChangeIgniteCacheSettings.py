@@ -37,11 +37,11 @@ if __name__ == '__main__':
 
     passwd = "123!deploy"  # 密码
 
-    IgnitecacheXml_srcfile = "D:\\tmp\\0121\\cacheserver\\ignite-cache.xml"
+    IgnitecacheXml_srcfile = "D:\\tmp\\0128\\cacheserver\\ignite-cache.xml"
 
     IgnitecacheXml_desfile = "/opt/active/sites/ignite01/ActiveNetServlet/config/ignite-cache.xml"
 
-    ServiceProperties_srcfile = "D:\\tmp\\0121\\cacheserver\\service.properties"
+    ServiceProperties_srcfile = "D:\\tmp\\0128\\cacheserver\\service.properties"
 
     ServiceProperties_desfile = "/opt/active/sites/ignite01/ActiveNetServlet/config/service.properties"
 

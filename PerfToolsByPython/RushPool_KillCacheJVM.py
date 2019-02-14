@@ -6,7 +6,7 @@ import paramiko
 import threading
 
 
-def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
+def threaddump(host, username, passwd, getJavaPid, checkJVM):
     try:
 
         ssh = paramiko.SSHClient()
@@ -24,17 +24,19 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
             # stdin.write("Y")   #简单交互，输入 ‘Y’
 
             out = stdout.readlines()
+            if len(out) == 0:
+                raise ValueError('JavaPid is null')
 
             # 屏幕输出
-            for o in out:
-                print(" Java process PID of ' %s ' :  %s" % (host, o))
+            for o1 in out:
+                print(" Java process PID of ' %s ' :  %s" % (host, o1))
             JavaPid = ''.join(out).rstrip('\n')
 
-        threaddumpcmd = []
-        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/perf' + ServerNo +'threaddump.txt' )
-        # ./jstack -l 9672  >/opt/active/ActiveNet/perf/perf08wthreaddump.txt
+        killJVMcmd = []
+        killJVMcmd.append('kill -9 ' + JavaPid )
+        print(killJVMcmd)
 
-        for m2 in threaddumpcmd:
+        for m2 in killJVMcmd:
             stdin, stdout, stderr = ssh.exec_command(m2)
 
             # stdin.write("Y")   #简单交互，输入 ‘Y’
@@ -42,25 +44,27 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
             out = stdout.readlines()
 
             # 屏幕输出
-            for o in out:
-                print(" threaddump of ' %s ' :  %s" % (host, o))
+            for o2 in out:
+                print(" server ' %s ' :  %s" % (host, o2))
 
 
-
-        print(threaddumpcmd)
-
+        for m3 in checkJVM:
+            stdin, stdout, stderr = ssh.exec_command(m3)
+            out = stdout.readlines()
+            for o3 in out:
+                print(" server ' %s ' :  %s" % (host, o3))
 
         ssh.close()
 
-    except:
+    except Exception as e:
 
-        print('%s\tError\n' %(host))
+        print('%s\tError\n : %s' % (host, e))
 
 
 if __name__ == '__main__':
 
     getJavaPid = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1|awk \'{print $2}\'']  # 获取JavaPid的命令
-    threadfilepath = "/opt/active/ActiveNet/perf" #dump文件存放路径
+    checkJVM = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1']  # 检查JVM状态
     JavaHome = "/usr/java/jdk8-1.8.0_31/bin" # 进入java路径
 
     username = "deploy"  # 用户名
@@ -69,20 +73,17 @@ if __name__ == '__main__':
 
     threads = []  # 多线程
 
-    # ./jstack -l 9672  >/opt/active/ActiveNet/perf/perf08wthreaddump.txt
 
     print("Begin......")
 
-    for i in range(1, 4):
+    for i in range(1, 3):
 
         if i < 10:
-            host1 = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            host1 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
         else:
-            host1 = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host1 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
-
-
-        a = threading.Thread(target=threaddump, args=(host1, username, passwd, getJavaPid, JavaHome, threadfilepath))
+        a = threading.Thread(target=threaddump, args=(host1, username, passwd, getJavaPid, checkJVM))
         a.start()
 
 

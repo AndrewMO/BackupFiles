@@ -14,7 +14,7 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
         ssh.connect(host, 22, username, passwd, timeout=5)
-        ServerNo = host[15:17]
+        ServerNo = host[12:14]
         JavaPid = -1
 
         for m1 in getJavaPid:
@@ -31,7 +31,7 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
             JavaPid = ''.join(out).rstrip('\n')
 
         threaddumpcmd = []
-        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/perf' + ServerNo +'threaddump.txt' )
+        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/perfignite' + ServerNo +'threaddump.txt' )
         # ./jstack -l 9672  >/opt/active/ActiveNet/perf/perf08wthreaddump.txt
 
         for m2 in threaddumpcmd:
@@ -48,6 +48,11 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
 
 
         print(threaddumpcmd)
+
+        # for
+
+
+
 
 
         ssh.close()
@@ -73,16 +78,14 @@ if __name__ == '__main__':
 
     print("Begin......")
 
-    for i in range(1, 4):
+    for i in range(1, 3):
 
         if i < 10:
-            host1 = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            host1 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
         else:
-            host1 = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host1 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
 
 
         a = threading.Thread(target=threaddump, args=(host1, username, passwd, getJavaPid, JavaHome, threadfilepath))
         a.start()
-
-
