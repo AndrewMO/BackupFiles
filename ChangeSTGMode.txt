@@ -1,0 +1,186 @@
+use lstgcampbellrecreation
+
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgchandleraz
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgchesterfieldparksrec
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+
+use lstgcityofcarlsbad
+
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgcityofcorona
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgcityofdowney
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgculpepercopandr
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgdenver
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgebparks
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgencinitasparksandrec
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgfalmouthcommunityprog
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgfpdccrecreation
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstggepark
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstggjparksandrec
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgindymca
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgkansascityymca
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstglanguagestars
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstglbparks
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgmesaaz
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgminneapolisparks
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgmontgomerycounty
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgmrurecreation
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgnaparec
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgnms
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgnorthshoreymca
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgomahaconservatory
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgoneteamkids
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgportlandparks
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgrightatschool
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgsanjoseparksandrec
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgsdparkandrec
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgsfcmprep
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgymcagreaterbrandywine
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+use lstgymcasatx
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+
+
+use lstgapachejunction
+
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'
+
+
+use lstgbreckenridgerec
+select * from systeminfo where keyword like '%cache%'
+update systeminfo set keywordvalue = 'REMOTE' where keyword = 'org_cache_mode'
+select * from systeminfo where keyword like '%cache%'

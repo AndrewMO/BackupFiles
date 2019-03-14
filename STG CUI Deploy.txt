@@ -1,0 +1,13 @@
+(URL IN('lstgapachejunction','LSTGBreckenridgeRec','LSTGCampbellRecreation','LSTGChandleraz','LSTGChesterfieldParksRec','LSTGCityofCarlsbad','LSTGCityofCorona','LSTGCityofDowney','LSTGCulpeperCoPandR','LSTGdenver','LSTGEBPARKS','LSTGEncinitasParksandRec','LSTGFalmouthcommunityprog','LSTGfpdccrecreation','LSTGgepark','LSTGgjparksandrec','LSTGindymca','LSTGkansascityymca','LSTGLanguageStars','LSTGlbparks','LSTGMesaAZ','LSTGMinneapolisParks','LSTGMontgomeryCounty','LSTGmrurecreation','LSTGNapaRec','LSTGNMS','LSTGnorthshoreymca','LSTGOmahaConservatory','LSTGOneteamkids','LSTGportlandparks','LSTGRightAtSchool','LSTGSanJoseParksandRec','LSTGSDParkandRec','LSTGSFCMprep','LSTGYMCAGreaterBrandywine','LSTGymcasatx') AND RETIRED = 0)
+
+
+
+
+
+
+
+
+
+
+
+( DBPOOL IN ('sqlstganet01') AND URL IN('LSTGymcasatx','LSTGkansascityymca','LSTGMontgomeryCounty','LSTGLanguageStars','LSTGindymca','LSTGnorthshoreymca','LSTGBreckenridgeRec','LSTGMinneapolisParks','LSTGportlandparks','LSTGMesaAZ','LSTGEBPARKS','LSTGYMCAGreaterBrandywine','LSTGCityofCarlsbad','LSTGFalmouthcommunityprog','LSTGdenver','LSTGRightAtSchool','LSTGChandleraz','LSTGSanJoseParksandRec','LSTGChesterfieldParksRec','LSTGSDParkandRec','LSTGNMS','LSTGfpdccrecreation','lstgapachejunction','LSTGCityofCorona','LSTGOneteamkids','LSTGSFCMprep','LSTGNapaRec','LSTGCulpeperCoPandR','LSTGmrurecreation','LSTGgepark','LSTGEncinitasParksandRec','LSTGCityofDowney','LSTGOmahaConservatory','LSTGCampbellRecreation','LSTGlbparks') AND RETIRED = 0)
