@@ -1,0 +1,3 @@
+Server = mstest.active.com
+Account = activetest
+Password = activetest
