@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<Request>
+   <RequestType>8</RequestType>
+   <RequestStatus>3</RequestStatus>
+   <RequestTicket>1409</RequestTicket>
+   <RequestAmount>1</RequestAmount>
+   <TerminalIdentifier>HPS</TerminalIdentifier>
+   <CardSwiped>False</CardSwiped>
+   <RequestSource>1</RequestSource>
+   <AuthorizationNumber></AuthorizationNumber>
+   <PIN></PIN>
+   <TRTerminalId></TRTerminalId>
+   <TRMerchantId></TRMerchantId>
+   <Cavv></Cavv>
+   <Xid></Xid>
+   <VbvTransaction>False</VbvTransaction>
+   <Eci></Eci>
+   <ReceiptId>0</ReceiptId>
+   <ReceiptDatestamp>0001-01-01 12:00:00</ReceiptDatestamp>
+   <HybridItemIdentifier>4</HybridItemIdentifier>
+   <HybridChargeDetail></HybridChargeDetail>
+   <Modulus>871e30b3e1fe123b8d62377c8b2b6220465218f6b4c169c75ae0421fd862e6d9b0b0e7d6a9226f298d473e196ac5f4956fad45dab1bb38a0e6134914a8c894fb75e8166ddd682b719e89c99026c8791c5cfaed2a6eb5dcafe8cb305d9834bdf007fdba1078e8d22c4e53b67dbeb6df4da3e1a180511b7ac688804620bbdea264d1a6e4006a8ef218ff30a96711599aa8be204d1dd58a0d3ef04df64a878494b4854dbb5fbdd9c70077a26448b7717531690fe13b033061bd27f76c83cf3931defe4cc4137848fccb0fcb401b334e83d9beb82c248da4eec3ea5ceea7cf5b452414625d1f0878315a47d571658b00872656b1ac11514d297e7f6e3badb3ab4587</Modulus>
+   <AMSCipherText>fPYRRDYzY3rqLHEt+VxIX0djdzfQdId3oIkSwnqtA/7ZYhx64BQxuJLpN5hdLIA6l40l0MSLd3GcwHizclmjf6n9MDuZYq7IK8T899F5Stbv5C/NrX0oCTUghwtrpCCt26B2oF2AhrrXWl4dZQ/adbsCSR80paDV1zLnPZ7BCzSY8A/mNA8fumFqJ6aTe9LpHVqKYynGERgkadoI2WprbBWoI2fMtU2TE/zMNlxxdQRIHuVyra93vD11vNGo3f2WC4LHz0MeN+agQW6eA22Gbkbok4eaMoPVe4OlkCd0axA+TvkycW812doHuCSusS9bJFAeCoIeQKH+EZelU5ZNLA==</AMSCipherText>
+   <ChargeId>0</ChargeId>
+   <AMSFlag>False</AMSFlag>
+   <AMSURL></AMSURL>
+   <AMSPort>0</AMSPort>
+   <AMSTimeOut>0</AMSTimeOut>
+   <CardAcceptorName></CardAcceptorName>
+   <TerminalLocationAddress></TerminalLocationAddress>
+   <TerminalLocationCity></TerminalLocationCity>
+   <TerminalState></TerminalState>
+   <TerminalZip></TerminalZip>
+   <AMSTransactionType></AMSTransactionType>
+   <AMSClientTransactionId></AMSClientTransactionId>
+   <OriginalAMSTransactionId></OriginalAMSTransactionId>
+   <MerchantDescriptor></MerchantDescriptor>
+   <WriteToLog>False</WriteToLog>
+   <LogPath></LogPath>
+   <IsReset>False</IsReset>
+   <AMSPINPadType>0</AMSPINPadType>
+   <PINPadManualEntry>False</PINPadManualEntry>
+   <AMSPinPadPort>0</AMSPinPadPort>
+   <CardInfo>
+      <Number>545454*******5454</Number>
+      <HolderName>Gibbs, Brad</HolderName>
+      <ExpiryMMYY>01/19</ExpiryMMYY>
+      <CVV2></CVV2>
+      <Track2></Track2>
+      <HolderAddress>2596 Willowwood Cr</HolderAddress>
+      <HolderPostalCode>90288</HolderPostalCode>
+      <AccountType>0</AccountType>
+      <Language>0</Language>
+      <CardType>3</CardType>
+      <SwipedOnPinPad>False</SwipedOnPinPad>
+      <WalletId></WalletId>
+      <KeepUntil>2018-05-02 12:00:00</KeepUntil>
+      <EncryptionEncTrack1></EncryptionEncTrack1>
+      <EncryptionEncTrack2></EncryptionEncTrack2>
+      <EncryptionEncMP></EncryptionEncMP>
+      <EncryptionKSN></EncryptionKSN>
+      <EncryptionMPStatus></EncryptionMPStatus>
+      <EncryptionCardType>0</EncryptionCardType>
+      <EncryptionBlockType>0</EncryptionBlockType>
+   </CardInfo>
+   <Result>
+      <ResultId>0</ResultId>
+      <ResultCode>1</ResultCode>
+      <RequestId>0</RequestId>
+      <RequestStatus>3</RequestStatus>
+      <RequestTicket>1409</RequestTicket>
+      <Message>Transaction approved.</Message>
+      <ISOMessage></ISOMessage>
+      <ISOCode></ISOCode>
+      <B24Code></B24Code>
+      <AuthorizationNumber>tst112</AuthorizationNumber>
+      <UniqueIdentifier></UniqueIdentifier>
+      <ProcessedDatetime>1899-12-30 12:00:00</ProcessedDatetime>
+      <CardLanguage>0</CardLanguage>
+      <VersionNumber></VersionNumber>
+      <OtherFields>&lt;?xml version="1.0"?&gt;&lt;OtherFields&gt;&lt;AMSAccountId&gt;15095909369001472611EXUGSMRHERJXNRAJUHNZCSUHABVCWGOK&lt;/AMSAccountId&gt;&lt;AMSTransactionId&gt;q2slu6rW61201070&lt;/AMSTransactionId&gt;&lt;AMSResult&gt;100&lt;/AMSResult&gt;&lt;/OtherFields&gt;</OtherFields>
+      <HostMessage>SUCCESS</HostMessage>
+      <PaymentServerGUID></PaymentServerGUID>
+      <CTR></CTR>
+      <AMSTransactionID></AMSTransactionID>
+      <AMSPinPadCCGAVSAddress></AMSPinPadCCGAVSAddress>
+      <AMSPinPadCCGAVSZIP></AMSPinPadCCGAVSZIP>
+      <AMSPinPadCCGCSC></AMSPinPadCCGCSC>
+      <AMSPinPadCCGResultCode></AMSPinPadCCGResultCode>
+      <AMSTransactionResultCode></AMSTransactionResultCode>
+      <CardInfo>
+         <Number></Number>
+         <HolderName></HolderName>
+         <ExpiryMMYY></ExpiryMMYY>
+         <CVV2></CVV2>
+         <Track2></Track2>
+         <HolderAddress></HolderAddress>
+         <HolderPostalCode></HolderPostalCode>
+         <AccountType>0</AccountType>
+         <Language>0</Language>
+         <CardType>0</CardType>
+         <SwipedOnPinPad>False</SwipedOnPinPad>
+         <WalletId>15095909369001472611EXUGSMRHERJXNRAJUHNZCSUHABVCWGOK</WalletId>
+         <KeepUntil>1899-12-30 12:00:00</KeepUntil>
+         <EncryptionEncTrack1></EncryptionEncTrack1>
+         <EncryptionEncTrack2></EncryptionEncTrack2>
+         <EncryptionEncMP></EncryptionEncMP>
+         <EncryptionKSN></EncryptionKSN>
+         <EncryptionMPStatus></EncryptionMPStatus>
+         <EncryptionCardType>0</EncryptionCardType>
+         <EncryptionBlockType>0</EncryptionBlockType>
+      </CardInfo>
+   </Result>
+</Request>

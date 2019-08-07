@@ -1,0 +1,36 @@
+# Author: Wayne Ran
+# Last Modified: 2018-06-26
+# Manully install load generator in one Linux server
+
+Pre-conditation:
+Manually install Load Generator in one Linux server and build the ipfw & ipfw_mod.ko file. 
+Please refer to Neoload doc for how to build above 2 files
+
+####################################################
+
+1. Upload installer & config file to LG server
+
+2. Stop currently running LG
+sudo /opt/neoload/bin/LoadGeneratorAgentService stop
+
+3. Silent Install
+sudo sh neoload_5_1_4_linux_x64.sh -q -dir /opt/neoload514 "-Vsys.installationTypeId=Load Generator" -Vsys.component.Common\$Boolean=true "-Vsys.component.Load Generator\$Boolean=true"
+
+4. Copy compiled files 
+sudo cp ipfw /opt/neoload514/tools/ipfw/linux/ipfw
+sudo cp ipfw_mod.ko /opt/neoload514/tools/ipfw/linux/ipfw_mod.ko
+
+then 
+sudo chmod 755 /opt/neoload514/tools/ipfw/linux/ipfw
+sudo chmod 644 /opt/neoload514/tools/ipfw/linux/ipfw_mod.ko
+
+5. Update config file, we need compare the content with latest defult file, make change if necessary
+sudo cp agent.properties /opt/neoload514/conf/agent.properties
+sudo chmod 644 /opt/neoload514/conf/agent.properties
+
+6. relink neoload folder
+sudo unlink /opt/neoload
+sudo ln -s /opt/neoload514/ /opt/neoload
+
+7. Start LG
+sudo /opt/neoload/bin/LoadGeneratorAgentService start

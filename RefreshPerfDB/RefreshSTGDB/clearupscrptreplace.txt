@@ -1,0 +1,18 @@
+####################################################################################################################################################################################
+Please modify the cleanup script to replace "delete from dbo.ICVERIFYLOG;" with the following:
+
+USE [ACM01vegasJetty]
+GO
+
+ALTER TABLE [dbo].[RECEIPTPAYMENTSPENDING] 
+DROP CONSTRAINT [FK_RECEIPTPAYMENTSPENDING__ICVERIFYLOG_ID]
+
+truncate table dbo.ICVERIFYLOG;
+
+ALTER TABLE [dbo].[RECEIPTPAYMENTSPENDING] WITH NOCHECK ADD CONSTRAINT [FK_RECEIPTPAYMENTSPENDING__ICVERIFYLOG_ID] FOREIGN KEY([ICVERIFYLOG_ID])
+REFERENCES [dbo].[ICVERIFYLOG] ([ICVERIFYLOG_ID])
+GO
+
+ALTER TABLE [dbo].[RECEIPTPAYMENTSPENDING] 
+CHECK CONSTRAINT [FK_RECEIPTPAYMENTSPENDING__ICVERIFYLOG_ID]
+GO

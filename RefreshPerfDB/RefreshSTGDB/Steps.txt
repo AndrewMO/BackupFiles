@@ -1,0 +1,15 @@
+Reason:  refresh perf test DB from live customer data. 
+Source DB Server: DBANET10vs
+DB name: campbellrecreation
+
+Target DB server: DBSTGANET01.dev.activenetwork.com
+DB name: lstgcampbellrecreation
+
+Steps:
+1. Backup source DB "campbellrecreation"
+2. Restore to target DB "lstgcampbellrecreation"
+3. Run ClearProductionData.sql for restored DB - ACM01VegasJetty
+4. I'll run SQLs to insert/modify data to make it for performance testing. 
+
+
+
