@@ -14,10 +14,10 @@ startDate.setDate(startDate.getDate()+ rndDays);
 endDate.setDate(endDate.getDate()+ rndDays);
 
 // Format date
-var startDate_month = startDate.getMonth();
+var startDate_month = startDate.getMonth()+1;
 var startDate_day = startDate.getDate();
 
-var endDate_month = endDate.getMonth();
+var endDate_month = endDate.getMonth()+1;
 var endDate_day = endDate.getDate();
 
 function formatDate(monthOrDay)
