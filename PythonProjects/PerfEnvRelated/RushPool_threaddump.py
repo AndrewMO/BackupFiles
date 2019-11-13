@@ -31,7 +31,7 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
             JavaPid = ''.join(out).rstrip('\n')
 
         threaddumpcmd = []
-        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/ServletCPUIssue1911perf' + ServerNo +'threaddumphighCPU.txt' )
+        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/1914releaseServlet' + ServerNo +'threaddumphighCPU02.txt' )
         # ./jstack -l 9672  >/opt/active/ActiveNet/perf/perf08wthreaddump.txt
 
         for m2 in threaddumpcmd:

@@ -28,7 +28,7 @@ def ssh2(host, username, passwd, cmd):
 
             for o in out:
                 #print(o)
-                print("%s service status :  %s" % (host, o))
+                print("%s  :  %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -41,22 +41,24 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    cmd = ['cd /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config;./start_service.sh']  # 你要执行的命令列表
+    # cmd = ["sudo sed -i '$a \n' /etc/hosts;sudo sed -i '$a #Test' /etc/hosts;sudo sed -i '$a 1.2.3.4' /etc/hosts"]  # 你要执行的命令列表
+    # cmd = ["sudo less /etc/hosts | grep 1.2.3.4"]  # 你要执行的命令列表
+    cmd = ["sudo sed -i 's/1\.2\.3\.4/#1\.2\.3\.4' /etc/hosts"]  # 你要执行的命令列表
 
-    username = "deploy"  # 用户名
+    username = "ajia"  # 用户名
 
-    passwd = "123!deploy"  # 密码
+    passwd = "Nwy7frxy@e"  # 密码
 
     threads = []  # 多线程
 
     print("Begin......")
 
-    for i in range(3, 4):
+    for i in range(26, 27):
 
         if i < 10:
-            host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            host = 'qaneolglin0' + str(i) + '.dev.activenetwork.com'
         else:
-            host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host = 'qaneolglin' + str(i) + '.dev.activenetwork.com'
 
         a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
         a.start()

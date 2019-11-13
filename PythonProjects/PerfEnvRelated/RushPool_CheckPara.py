@@ -27,7 +27,7 @@ def ssh2(host, username, passwd, cmd):
 
             for o in out:
                 #print(o)
-                print("%s para status :  %s" % (host, o))
+                print("%s  :  %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -45,10 +45,12 @@ if __name__ == '__main__':
     # cmd = ['cat /proc/version']  # 你要执行的命令列表
 
 
-    # cmd = ['cat /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/ignite-cache.xml | grep enableCacheEventMsg']  # 你要执行的命令列表
+    cmd = ['cat /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/ignite-cache.xml | grep copyOnRead']  # 你要执行的命令列表
+
+    cmd1 = ['cat /opt/active/sites/ignite01/ActiveNetServlet/config/ignite-cache.xml | grep copyOnRead']  # 你要执行的命令列表
 
 
-    cmd = ['cat /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/service.properties | grep PST']  # 你要执行的命令列表
+    # cmd = ['cat /opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/service.properties | grep PST']  # 你要执行的命令列表
 
     username = "deploy"  # 用户名
 
@@ -68,14 +70,14 @@ if __name__ == '__main__':
         a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd))
         a.start()
 
-    # print("Begin......Cache")
-    #
-    # for i in range(1, 3):
-    #
-    #     if i < 10:
-    #         host2 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
-    #     else:
-    #         host2 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
-    #
-    #     b = threading.Thread(target=ssh2, args=(host2, username, passwd, cmd))
-    #     b.start()
+    print("Begin......Cache")
+
+    for i in range(1, 3):
+
+        if i < 10:
+            host2 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
+        else:
+            host2 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
+
+        b = threading.Thread(target=ssh2, args=(host2, username, passwd, cmd1))
+        b.start()

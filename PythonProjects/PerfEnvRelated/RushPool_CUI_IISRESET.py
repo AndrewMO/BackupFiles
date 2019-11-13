@@ -5,7 +5,7 @@
 from pypsexec.client import Client
 
 
-def RunCmdOnRemote(server, username, password, executable, arguments):
+def run_cmd_on_remote(server, username, password, executable, arguments):
     # set encrypt=False for Windows 7, Server 2008
     c = Client(server, username=username, password=password, encrypt=False)
     print("\033[0;37;40m%s\033[0m" %(server))
@@ -30,7 +30,7 @@ def RunCmdOnRemote(server, username, password, executable, arguments):
 
 if __name__ == '__main__':
 
-    # server = "ANACMP003.active.tan"
+    # servers = ["ANACMP007.active.tan"]
     servers = ["ANACMP003.active.tan", "ANACMP003a.active.tan", "ANACMP003b.active.tan",\
                "ANACMP004.active.tan", "ANACMP004a.active.tan", "ANACMP004b.active.tan", \
                "ANACMP005.active.tan", "ANACMP005a.active.tan", "ANACMP005b.active.tan", \
@@ -48,6 +48,6 @@ if __name__ == '__main__':
 
 
     for server in servers:
-        RunCmdOnRemote(server, username, password, executable, arguments)
+        run_cmd_on_remote(server, username, password, executable, arguments)
 
 

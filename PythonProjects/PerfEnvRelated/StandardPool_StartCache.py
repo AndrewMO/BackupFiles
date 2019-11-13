@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
     print("Begin......")
 
-    for i in range(3, 4):
+    for i in range(1, 4, 2):
 
         if i < 10:
             host = 'perf-ignite-0' + str(i) + 'w.an.active.tan'

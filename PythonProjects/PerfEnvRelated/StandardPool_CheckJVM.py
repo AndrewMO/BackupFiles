@@ -63,7 +63,22 @@ if __name__ == '__main__':
         a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
         a.start()
 
+
+
+    # for i in range(1, 3):
+    #
+    #     if i < 10:
+    #         host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+    #     else:
+    #         host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+    #
+    #     c = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
+    #     c.start()
+
     print("Begin......Cache")
+
+
+
 
     for i in range(3, 4):
 

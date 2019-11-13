@@ -43,15 +43,15 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    orgnames = ["acm01vegasjetty", "acm01vegas", "perf01", "perf02", "perf01jetty"]
+    orgnames = ["acm01vegasjetty", "acm01vegas", "perf01", "perf02", "perf01jetty", "ignite01", "share" ]
 
-    versionString = "18*"
+    versionString = "19.14.0.05*"
 
 
 
     for orgname in orgnames:
 
-        cmdString = "cd /opt/active/ActiveNet/perf" + orgname + ";rm -rf " + versionString
+        cmdString = "cd /opt/active/ActiveNet/perf/" + orgname + ";rm -rf " + versionString
 		
         cmd =[]
 
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         print("Begin......")
         time1 = time.time()
 
-        for i in range(1, 3):
+        for i in range(1, 2):
 
             if i < 10:
                 host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'

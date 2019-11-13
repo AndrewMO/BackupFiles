@@ -11,7 +11,7 @@ import logging
 # logging.disable(logging.CRITICAL)
 
 
-def getResponse(url):
+def get_response(url):
     requests.adapters.DEFAULT_RETRIES = 5
     time_start = time.time()
     response = requests.get(url)
@@ -30,12 +30,12 @@ if __name__ == '__main__' :
 
     # logging.debug('start of program')
     thread = []
-    # orgname = 'perf04'
+    # orgname = 'perf02'
     orgname = 'acm01vegasjetty'
     count = 0
 
 
-
+    # for i in range(2, 20):
     for i in range(1, 19):
         if (i < 10):
             urlstr = "http://perf-activenet-0"+str(i)+"w.an.active.tan:3000/"+orgname+"/servlet/adminlogin.sdi"
@@ -45,7 +45,7 @@ if __name__ == '__main__' :
             # logging.debug('i is ' + str(i) + ' , url is ' + urlstr)
         # print(urlstr)
         # print("server  %r is initialing"  %(i))
-        a = threading.Thread(target=getResponse, args=(urlstr,))
+        a = threading.Thread(target=get_response, args=(urlstr,))
         a.start()
         count += 1
 

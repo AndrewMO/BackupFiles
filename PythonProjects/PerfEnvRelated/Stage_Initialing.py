@@ -12,7 +12,7 @@ import logging
 
 
 def getResponse(url, org):
-    requests.adapters.DEFAULT_RETRIES = 3
+    requests.adapters.DEFAULT_RETRIES = 5
     # response = requests.get(url)
     # response.raise_for_status()
     time_start = time.time()

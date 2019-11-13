@@ -81,7 +81,7 @@ if __name__ == '__main__':
 
     print("Begin......")
 
-    # for i in range(19, 21):
+    # for i in range(2, 20):
     for i in range(1, 19):
 
         if i < 10:

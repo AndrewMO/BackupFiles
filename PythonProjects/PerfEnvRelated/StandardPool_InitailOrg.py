@@ -28,12 +28,12 @@ def getResponse(url):
 
 if __name__ == '__main__' :
 
-    logging.debug('start of program')
+    # logging.debug('start of program')
 
     print("processing...")
     thread = []
-    # orgname = ['perf01', 'perf01jetty', 'perf02', 'perf03', 'acm01vegas']
-    orgname = ['perf02']
+    orgname = ['perf01', 'perf01jetty', 'perf02', 'perf03', 'acm01vegas']
+    # orgname = ['acm01vegas']
 
 
     # orgname = sys.argv[1]

@@ -27,7 +27,7 @@ def ssh2(host, username, passwd, cmd):
 
             for o in out:
                 #print(o)
-                print("%s service status : %s" % (host, o))
+                print("%s : %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -41,15 +41,30 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    orgname = ['lstgapachejunction', 'lstgbreckenridgerec', 'lstgcampbellrecreation', 'lstgchandleraz',
-               'lstgchesterfieldparksrec', 'lstgcityofcarlsbad', 'lstgcityofcorona', 'lstgcityofdowney',
-               'lstgculpepercopandr', 'lstgdenver', 'lstgebparks', 'lstgencinitasparksandrec',
-               'lstgfalmouthcommunityprog', 'lstgfpdccrecreation', 'lstggepark', 'lstggjparksandrec', 'lstgindymca',
-               'lstgkansascityymca', 'lstglanguagestars', 'lstglbparks', 'lstgmesaaz', 'lstgminneapolisparks',
-               'lstgmontgomerycounty', 'lstgmrurecreation', 'lstgnaparec', 'lstgnms', 'lstgnorthshoreymca',
-               'lstgomahaconservatory', 'lstgoneteamkids', 'lstgportlandparks', 'lstgrightatschool',
-               'lstgsanjoseparksandrec', 'lstgsdparkandrec', 'lstgsfcmprep', 'lstgymcagreaterbrandywine',
-               'lstgymcasatx']
+
+    ## perf orgs
+    # orgname = ['lstgapachejunction', 'lstgbreckenridgerec', 'lstgcampbellrecreation', 'lstgchandleraz',
+    #            'lstgchesterfieldparksrec', 'lstgcityofcarlsbad', 'lstgcityofcorona', 'lstgcityofdowney',
+    #            'lstgculpepercopandr', 'lstgdenver', 'lstgebparks', 'lstgencinitasparksandrec',
+    #            'lstgfalmouthcommunityprog', 'lstgfpdccrecreation', 'lstggepark', 'lstggjparksandrec', 'lstgindymca',
+    #            'lstgkansascityymca', 'lstglanguagestars', 'lstglbparks', 'lstgmesaaz', 'lstgminneapolisparks',
+    #            'lstgmontgomerycounty', 'lstgmrurecreation', 'lstgnaparec', 'lstgnms', 'lstgnorthshoreymca',
+    #            'lstgomahaconservatory', 'lstgoneteamkids', 'lstgportlandparks', 'lstgrightatschool',
+    #            'lstgsanjoseparksandrec', 'lstgsdparkandrec', 'lstgsfcmprep', 'lstgymcagreaterbrandywine',
+    #            'lstgymcasatx']
+
+    # auto orgs
+    orgname = ['automt01','automt02', 'automt03', 'automt04', 'automt05', 'automt06',
+               'automt07', 'automt08', 'automt09', 'automt10', 'automt11',
+               'automt12', 'automt13', 'automt14', 'automt15', 'automt16',
+               'automt17', 'automt18','anetdev01','anetdev02', 'anetdev03', 'anetdev04',
+               'jettytest01','jettytest02', 'jettytest03', 'jettytest04', 'jettytest05', 'jettytest06',
+               'jettytest07', 'jettytest08', 'jettytest09', 'jettytest10', 'jettytest11',
+               'jettytest12', 'jettytest13', 'jettytest14', 'linux01', 'linux02', 'linux03', 'linux04',
+               'linux05', 'linux06', 'linux07', 'linux08', 'linux09', 'linux10', 'linux11', 'linux12',
+               'linux13', 'linux14', 'linux15', 'linux16', 'linux17', 'linux18', 'linux19', 'linux21']
+
+    # function orgs
 
     # orgname = ['lstgymcasatx','lstgsanjoseparksandrec']
 
@@ -62,26 +77,15 @@ if __name__ == '__main__':
 
 
     for org in orgname:
-        rmvPkgs = "rm -rf 19.01*"
+        rmvPkgs = "rm -rf 19.12*"
         cmdString = "cd /opt/active/ActiveNet/stage/" + org + ";" + rmvPkgs
+
+
         cmd.append(cmdString)
-
-    print(cmd)
-    host1 = 'stage-activenet-02w.an.dev.activenetwork.com'
-    ssh2(host1, username, passwd, cmd)
-
-    # threads = []  # 多线程
-    #
-    # print("Begin......Servlet")
-    #
-    # # for i in range(1, 2):
-    #
-    #     if i < 10:
-    #         host1 = 'stage-activenet-0' + str(i) + 'w.an.dev.activenetwork.com'
-    #     else:
-    #         host1 = 'stage-activenet-' + str(i) + 'w.an.dev.activenetwork.com'
-    #
-    #     a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd))
-    #     a.start()
+        print("\033[0;37;40m %s \033[0m" %(org))
+        host1 = 'stage-activenet-02w.an.dev.activenetwork.com'
+        ssh2(host1, username, passwd, cmd)
+        print("\033[0;32;43m %s \033[0m" % ("finish"))
+        cmd.clear()
 
 

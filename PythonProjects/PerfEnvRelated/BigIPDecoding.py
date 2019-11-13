@@ -9,7 +9,7 @@ def main():
     #839518730.47873.0000
 
 
-    cookie_string = "2458154762.0.0000"
+    cookie_string = "1401452298.0.0000"
 
 
     (cookie_ip, cookie_port, end) = cookie_string.split('.')
@@ -25,7 +25,7 @@ def main():
 
 
 
-    server_ip = str(ip1) + ". " + str(ip2) + ". " + str(ip3) + ". " + str(ip4)
+    server_ip = str(ip1) + "." + str(ip2) + "." + str(ip3) + "." + str(ip4)
 
 
 

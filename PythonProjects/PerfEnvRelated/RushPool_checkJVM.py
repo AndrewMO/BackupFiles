@@ -43,6 +43,7 @@ if __name__ == '__main__':
     # cmd = ['pwd']  # 你要执行的命令列表
 
     cmd = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1']  # 你要执行的命令列表
+    # cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
 
     # cmd = ['ps -ef|grep java|grep -v grep']  # 你要执行的命令列表
 
