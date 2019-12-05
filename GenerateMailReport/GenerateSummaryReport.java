@@ -8,8 +8,8 @@ public class GenerateSummaryReport {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		File reportFile = new File("C:/Program Files (x86)/Jenkins/workspace/ANDailyPerfTest_STGAcm01vegas/neoload-report/report_files/summary.html");
-		File versionFile = new File("C:/Program Files (x86)/Jenkins/workspace/ANDailyPerfTest_STGAcm01vegas/version.html");
+		File reportFile = new File("C:/Program Files (x86)/Jenkins/workspace/ANDailyPerfTest/neoload-report/report_files/summary.html");
+		File versionFile = new File("C:/Program Files (x86)/Jenkins/workspace/ANDailyPerfTest/version.html");
 		String reportFile_origian = "<div align=\"center\">";
 		String versionFile_origian = "";
         
@@ -91,7 +91,7 @@ public class GenerateSummaryReport {
 	        
 	        
 	        //输出编辑后的Summary文件
-			File f1 = new File("C:/Program Files (x86)/Jenkins/workspace/ANDailyPerfTest_STGAcm01vegas/Report_export.html");
+			File f1 = new File("C:/Program Files (x86)/Jenkins/workspace/ANDailyPerfTest/Report_export.html");
 			FileWriter fw = new FileWriter(f1);
 			fw.write(finalReport);
 			fw.close();
