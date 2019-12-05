@@ -40,7 +40,7 @@ if __name__ == '__main__':
                "ANACMP007d.active.tan", "ANACMP008.active.tan", "ANACMP008a.active.tan", \
                "ANACMP008b.active.tan", "ANACMP008c.active.tan", "ANACMP008d.active.tan"]
     username = "tan\\ajia"
-    password = "Nwy7frxy@e"
+    password = "Nwy7frxy@f"
     executable = "iisreset.exe"
     arguments = ""
     # arguments = "/all"

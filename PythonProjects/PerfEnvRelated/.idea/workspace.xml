@@ -37,7 +37,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RushPool_Initialing">
+  <component name="RunManager" selected="Python.RushPool_KillNewCUIJVM">
+    <configuration name="RushPool_CUI_IISRESET" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PerfEnvRelated" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RushPool_CUI_IISRESET.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="RushPool_Initialing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PerfEnvRelated" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -59,7 +80,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="RushPool_StartService" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="RushPool_KillNewCUIJVM" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PerfEnvRelated" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -71,7 +92,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RushPool_StartService.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RushPool_KillNewCUIJVM.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -80,7 +101,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Stage_Initialing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="RushPool_KillServletJVM" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PerfEnvRelated" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -92,7 +113,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stage_Initialing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RushPool_KillServletJVM.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -101,7 +122,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="StandardPool_InitailOrg" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="RushPool_heapdumpNewCUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PerfEnvRelated" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -113,28 +134,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StandardPool_InitailOrg.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="StandardPool_KillServletJVM" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PerfEnvRelated" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StandardPool_KillServletJVM.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RushPool_heapdumpNewCUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.RushPool_KillNewCUIJVM" />
+        <item itemvalue="Python.RushPool_heapdumpNewCUI" />
+        <item itemvalue="Python.RushPool_CUI_IISRESET" />
         <item itemvalue="Python.RushPool_Initialing" />
-        <item itemvalue="Python.RushPool_StartService" />
-        <item itemvalue="Python.Stage_Initialing" />
-        <item itemvalue="Python.StandardPool_InitailOrg" />
-        <item itemvalue="Python.StandardPool_KillServletJVM" />
+        <item itemvalue="Python.RushPool_KillServletJVM" />
       </list>
     </recent_temporary>
   </component>

@@ -31,7 +31,7 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
             JavaPid = ''.join(out).rstrip('\n')
 
         threaddumpcmd = []
-        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/ANE101440ignite' + ServerNo +'threaddump.txt' )
+        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/ANE101317ignite' + ServerNo +'threaddump.txt' )
 
         # ./jstack -l 9672  >/opt/active/ActiveNet/perf/perf08wthreaddump.txt
 
@@ -73,16 +73,30 @@ if __name__ == '__main__':
 
     # ./jstack -l 9672  >/opt/active/ActiveNet/perf/perf08wthreaddump.txt
 
-    print("Begin......")
+    print("Ignite......")
 
     for i in range(3, 4):
 
         if i < 10:
-            host1 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
+            host_ignite = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
         else:
-            host1 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
+            host_ignite = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
 
 
-        a = threading.Thread(target=threaddump, args=(host1, username, passwd, getJavaPid, JavaHome, threadfilepath))
+        a = threading.Thread(target=threaddump, args=(host_ignite, username, passwd, getJavaPid, JavaHome, threadfilepath))
         a.start()
+        a.join()
+
+    print("Servlet......")
+    for i in range(19, 21):
+
+        if i < 10:
+            host_servlet = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+        else:
+            host_servlet = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+
+
+
+        b = threading.Thread(target=threaddump, args=(host_servlet, username, passwd, getJavaPid, JavaHome, threadfilepath))
+        b.start()

@@ -33,7 +33,7 @@ if __name__ == '__main__' :
     print("processing...")
     thread = []
     orgname = ['perf01', 'perf01jetty', 'perf02', 'perf03', 'acm01vegas']
-    # orgname = ['acm01vegas']
+    # orgname = ['perf02']
 
 
     # orgname = sys.argv[1]
