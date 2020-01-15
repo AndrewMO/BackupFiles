@@ -8,8 +8,8 @@ declare @z NVARCHAR(50)
 
 USE acm01vegasjetty
 -- actually, lets just fill in the big hole from the end of current customers up to 1000000
-set @x = 3999999  --max customers
-set @y = 1000001
+set @x = 4999999  --max customers
+set @y = 2000001
 set @z = CONVERT(NVARCHAR,@y)
 
 print convert(nvarchar, @x)

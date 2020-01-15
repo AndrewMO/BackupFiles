@@ -35,7 +35,7 @@ select * from systeminfo where keyword = 'online_reservation_resource_search_ski
 
 if not exists (select KEYWORDVALUE from systeminfo where KEYWORD = 'online_reservation_resource_search_timeout_seconds')
 begin
-insert into systeminfo (KEYWORD, KEYWORDVALUE) values ('online_reservation_resource_search_timeout_seconds', 5)
+insert into systeminfo (KEYWORD, KEYWORDVALUE) values ('online_reservation_resource_search_timeout_seconds', 30)
 end
 else
 begin
@@ -44,3 +44,16 @@ update SYSTEMINFO set KEYWORDVALUE = 30 where KEYWORD = 'online_reservation_reso
 end
 
 select * from systeminfo where keyword = 'online_reservation_resource_search_timeout_seconds'
+
+
+if not exists (select KEYWORDVALUE from systeminfo where KEYWORD = 'online_reservation_resource_search_skip_unavailable_threshold')
+begin
+insert into systeminfo (KEYWORD, KEYWORDVALUE) values ('online_reservation_resource_search_skip_unavailable_threshold', 100)
+end
+else
+begin
+update SYSTEMINFO set KEYWORDVALUE = 100 where KEYWORD = 'online_reservation_resource_search_skip_unavailable_threshold'
+
+end
+
+select * from systeminfo where keyword = 'online_reservation_resource_search_skip_unavailable_threshold'

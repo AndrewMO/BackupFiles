@@ -10,8 +10,8 @@ declare @sqlLoop integer
 
 USE acm01vegasjetty
 
-set @x = 3999999  -- Max customers
-set @y = 1000001
+set @x = 4999999  -- Max customers
+set @y = 2000001
 set @z = CONVERT(NVARCHAR,@y)
 set @sqlLoop = 1
 
