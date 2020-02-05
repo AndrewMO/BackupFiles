@@ -3,6 +3,7 @@
 # !/usr/bin/python
 
 import paramiko
+
 import threading
 
 
@@ -26,30 +27,23 @@ def ssh2(host, username, passwd, cmd):
             # 屏幕输出
 
             for o in out:
-                print("%s  : %s" % (host, o))
-                # print("\033[0;37;40m%s\033[0m : %s" % (host, o))
+                #print(o)
+                print("%s service status :  %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
         ssh.close()
 
-    except:
+    except Exception as e:
 
-        print('%s\tError\n' %(host))
+        print('%s\tError\n %r' %(host, e))
 
 
 if __name__ == '__main__':
 
-    # cmd = ['pwd']  # 你要执行的命令列表
-
-    cmd_jvm = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1']  # 你要执行的命令列表
     cmd = ['ps -ef |grep java | grep -v grep | grep ActiveNetServlet | awk \'{print $14}\' | awk -F \'/\' \'{print $7}\''] # 你要执行的命令列表
 
-    # cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
 
-    # cmd = ['ps -ef|grep java|grep -v grep']  # 你要执行的命令列表
-
-    # cmd = ['ps -ef|grep java']  # 你要执行的命令列表
 
     username = "deploy"  # 用户名
 
@@ -59,24 +53,39 @@ if __name__ == '__main__':
 
     print("Begin......Servlet")
 
-    for i in range(1, 19):
+    for i in range(19, 21):
 
         if i < 10:
-            host1 = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
         else:
-            host1 = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
-        a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd))
+        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
         a.start()
+
+
+
+    # for i in range(1, 3):
+    #
+    #     if i < 10:
+    #         host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+    #     else:
+    #         host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+    #
+    #     c = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
+    #     c.start()
 
     print("Begin......Cache")
 
-    for i in range(1, 3):
+
+
+
+    for i in range(3, 4):
 
         if i < 10:
-            host2 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
+            host = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
         else:
-            host2 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
+            host = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
-        b = threading.Thread(target=ssh2, args=(host2, username, passwd, cmd))
+        b = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
         b.start()

@@ -41,28 +41,28 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    # orgname = ['lstgapachejunction', 'lstgbreckenridgerec', 'lstgcampbellrecreation', 'lstgchandleraz',
-    #            'lstgchesterfieldparksrec', 'lstgcityofcarlsbad', 'lstgcityofcorona', 'lstgcityofdowney',
-    #            'lstgculpepercopandr', 'lstgdenver', 'lstgebparks', 'lstgencinitasparksandrec',
-    #            'lstgfalmouthcommunityprog', 'lstgfpdccrecreation', 'lstggepark', 'lstggjparksandrec', 'lstgindymca',
-    #            'lstgkansascityymca', 'lstglanguagestars', 'lstglbparks', 'lstgmesaaz', 'lstgminneapolisparks',
-    #            'lstgmontgomerycounty', 'lstgmrurecreation', 'lstgnaparec', 'lstgnms', 'lstgnorthshoreymca',
-    #            'lstgomahaconservatory', 'lstgoneteamkids', 'lstgportlandparks', 'lstgrightatschool',
-    #            'lstgsanjoseparksandrec', 'lstgsdparkandrec', 'lstgsfcmprep', 'lstgymcagreaterbrandywine',
-    #            'lstgymcasatx']
+    orgname = ['lstgapachejunction', 'lstgbreckenridgerec', 'lstgcampbellrecreation', 'lstgchandleraz',
+               'lstgchesterfieldparksrec', 'lstgcityofcarlsbad', 'lstgcityofcorona', 'lstgcityofdowney',
+               'lstgculpepercopandr', 'lstgdenver', 'lstgebparks', 'lstgencinitasparksandrec',
+               'lstgfalmouthcommunityprog', 'lstgfpdccrecreation', 'lstggepark', 'lstggjparksandrec', 'lstgindymca',
+               'lstgkansascityymca', 'lstglanguagestars', 'lstglbparks', 'lstgmesaaz', 'lstgminneapolisparks',
+               'lstgmontgomerycounty', 'lstgmrurecreation', 'lstgnaparec', 'lstgnms', 'lstgnorthshoreymca',
+               'lstgomahaconservatory', 'lstgoneteamkids', 'lstgportlandparks', 'lstgrightatschool',
+               'lstgsanjoseparksandrec', 'lstgsdparkandrec', 'lstgsfcmprep', 'lstgymcagreaterbrandywine',
+               'lstgymcasatx']
 
 
 
 
-    orgname = ['automt01','automt02', 'automt03', 'automt04', 'automt05', 'automt06',
-               'automt07', 'automt08', 'automt09', 'automt10', 'automt11',
-               'automt12', 'automt13', 'automt14', 'automt15', 'automt16',
-               'automt17', 'automt18','anetdev01','anetdev02', 'anetdev03', 'anetdev04',
-               'jettytest01','jettytest02', 'jettytest03', 'jettytest04', 'jettytest05', 'jettytest06',
-               'jettytest07', 'jettytest08', 'jettytest09', 'jettytest10', 'jettytest11',
-               'jettytest12', 'jettytest13', 'jettytest14', 'linux01', 'linux02', 'linux03', 'linux04',
-               'linux05', 'linux06', 'linux07', 'linux08', 'linux09', 'linux10', 'linux11', 'linux12',
-               'linux13', 'linux14', 'linux15', 'linux16', 'linux17', 'linux18', 'linux19', 'linux21']
+    # orgname = ['automt01','automt02', 'automt03', 'automt04', 'automt05', 'automt06',
+    #            'automt07', 'automt08', 'automt09', 'automt10', 'automt11',
+    #            'automt12', 'automt13', 'automt14', 'automt15', 'automt16',
+    #            'automt17', 'automt18','anetdev01','anetdev02', 'anetdev03', 'anetdev04',
+    #            'jettytest01','jettytest02', 'jettytest03', 'jettytest04', 'jettytest05', 'jettytest06',
+    #            'jettytest07', 'jettytest08', 'jettytest09', 'jettytest10', 'jettytest11',
+    #            'jettytest12', 'jettytest13', 'jettytest14', 'linux01', 'linux02', 'linux03', 'linux04',
+    #            'linux05', 'linux06', 'linux07', 'linux08', 'linux09', 'linux10', 'linux11', 'linux12',
+    #            'linux13', 'linux14', 'linux15', 'linux16', 'linux17', 'linux18', 'linux19', 'linux21']
 
     # orgname = ['lstgymcasatx','lstgsanjoseparksandrec']
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     threads = []  # 多线程
 
     for org in orgname:
-        rmvPkgs = "rm -rf 17*"
+        rmvPkgs = "rm -rf 18*"
         cmdString = "'cd /opt/active/ActiveNet/dev/" + org + ";" + rmvPkgs + "'"
         # cmdString = "cd /opt/active/ActiveNet/stage/" + org + ";" + rmvPkgs
         cmd.append(cmdString)

@@ -41,19 +41,17 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    # cmd = ["sudo sed -i '$a \n' /etc/hosts;sudo sed -i '$a #Test' /etc/hosts;sudo sed -i '$a 1.2.3.4' /etc/hosts"]  # 你要执行的命令列表
-    # cmd = ["sudo less /etc/hosts | grep 1.2.3.4"]  # 你要执行的命令列表
-    cmd = ["sudo sed -i 's/1\.2\.3\.4/#1\.2\.3\.4' /etc/hosts"]  # 你要执行的命令列表
+    cmd = ['sudo /opt/neoload/bin/LoadGeneratorAgentService stop;sudo unlink /opt/neoload;sudo ln -s /opt/neoload710/ /opt/neoload;sudo /opt/neoload/bin/LoadGeneratorAgentService start']  # 你要执行的命令列表
 
     username = "ajia"  # 用户名
 
-    passwd = "Nwy7frxy@e"  # 密码
+    passwd = "Nwy7frxy@f"  # 密码
 
     threads = []  # 多线程
 
     print("Begin......")
 
-    for i in range(26, 27):
+    for i in range(12, 21):
 
         if i < 10:
             host = 'qaneolglin0' + str(i) + '.dev.activenetwork.com'

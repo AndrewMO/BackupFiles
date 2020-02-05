@@ -51,6 +51,7 @@ if __name__ == '__main__':
 
     print("Begin......")
 
+    # for i in range(1, 41):
     for i in range(27, 41):
 
         if i < 10:
