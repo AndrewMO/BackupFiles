@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     print("Begin......Cache")
 
-    for i in range(1, 3):
+    for i in range(1, 4):
 
         if i < 10:
             host2 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'

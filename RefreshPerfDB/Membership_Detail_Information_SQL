@@ -1,0 +1,28 @@
+use perf01
+
+
+select m.membership_ID , (case
+
+            when m.PUNCH_PASS_EXPIRED_ON>'1899-12-30 00:00:00.000'
+
+then case when m.Modified_Date_Time<m.PUNCH_PASS_EXPIRED_ON then m.PUNCH_PASS_EXPIRED_ON else m.Modified_Date_Time end
+
+when m.DATEEXPIRES>'1899-12-30 00:00:00.000' and GetDate()>m.DATEEXPIRES
+
+then case when m.Modified_Date_Time<DATEADD(dd,1,m.DATEEXPIRES) then DATEADD(dd,1,m.DATEEXPIRES) else m.Modified_Date_Time end
+
+ when m.DATESUSPENDEDFROM>'1899-12-30 00:00:00.000'
+
+and m.DATESUSPENDEDFROM<=GetDate()
+
+and (m.DATESUSPENDEDTO is null or m.DATESUSPENDEDTO='1899-12-30 00:00:00.000' or GetDate()<m.DATESUSPENDEDTO)
+
+and m.Modified_Date_Time<m.DATESUSPENDEDFROM then m.DATESUSPENDEDFROM
+
+when GetDate()>=m.DATESUSPENDEDTO and m.Modified_Date_Time<m.DATESUSPENDEDTO
+
+then m.DATESUSPENDEDTO
+
+else m.Modified_Date_Time end) Modified_Date_Time 
+
+FROM DBO.MEMBERSHIPS m order by Modified_Date_Time

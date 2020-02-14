@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     username = "ajia"  # 用户名
 
-    passwd = "Nwy7frxy@e"  # 密码
+    passwd = "Nwy7frxy@f"  # 密码
 
     threads = []  # 多线程
 

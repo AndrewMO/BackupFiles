@@ -3,58 +3,99 @@
 # !/usr/bin/python
 
 import paramiko
-
+import datetime
 import threading
+import os
 
-
-def ssh2(host, username, passwd, cmd):
+def upload(host, username, passwd,  local, remote):
     try:
 
-        ssh = paramiko.SSHClient()
+        trans = paramiko.Transport((host, 22))
+        trans.connect(username=username, password=passwd)
+        sftp = paramiko.SFTPClient.from_transport(trans)
 
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        files = os.listdir(local)
+        for f in files:
+            print(' upload file %s on %s Start %s ' % ( str(f), host, datetime.datetime.now()))
+            sftp.put(os.path.join(local, f), os.path.join(remote, f))
+            print('upload file %s on %s End %s ' % (str(f), host, datetime.datetime.now()))
 
-        ssh.connect(host, 22, username, passwd, timeout=5)
+        # sftp.put(local, remote)
 
-        for m in cmd:
+        trans.close()
 
-            stdin, stdout, stderr = ssh.exec_command(m)
+    except Exception as e:
 
-            # stdin.write("Y")   #简单交互，输入 ‘Y’
+        print('%s\t connect  error\n' %(host))
+        print("-----------ExceptLog-----------")
+        print(e)
 
-            out = stdout.readlines()
 
-            # 屏幕输出
+def download(host, username, passwd,  local, remote):
+    try:
 
-            for o in out:
-                #print(o)
-                print("%s  :  %s" % (host, o))
+        trans = paramiko.Transport((host, 22))
+        trans.connect(username=username, password=passwd)
+        sftp = paramiko.SFTPClient.from_transport(trans)
 
-        ssh.close()
+        files = sftp.listdir(remote)
 
-    except:
+        for f in files:
+            print(' download file %s on %s Start %s ' % (str(f), host, datetime.datetime.now()))
+            sftp.get(os.path.join(remote, f), os.path.join(local, f))
+            print('download file %s on %s End %s ' % (str(f), host, datetime.datetime.now()))
 
-        print('%s\tError\n' %(host))
+        # sftp.get(remote, local)
+
+        trans.close()
+
+    except Exception as e:
+
+        print('%s\t connect  error\n' %(host))
+        print("-----------ExceptLog-----------")
+        print(e)
 
 
 if __name__ == '__main__':
 
-    cmd = ["ifconfig"]  # 你要执行的命令列表
+    username = "deploy"  # 用户名
 
-    username = "ajia"  # 用户名
+    passwd = "123!deploy"  # 密码
 
-    passwd = "Nwy7frxy@f"  # 密码
+    # IgnitecacheXml_localfile = "/Users/ajia/Documents/tmp/Settings/ftptest/service.properties"
+    #
+    # IgnitecacheXml_remotefile = "/opt/active/sites/ignite01/ActiveNetServlet/config/ignite-cache.xml"
+
+    # ServiceProperties_localfile = "/Users/ajia/Documents/tmp/Settings/codecache/new/service.properties"
+    ServiceProperties_localfile = "/Users/ajia/Documents/tmp/Settings/codecache/origin/service.properties"
+
+    ServiceProperties_remotefile = "/opt/active/sites/perf03/ActiveNetServlet/config/service.properties"
+
+    test_local = "/Users/ajia/Documents/tmp/FTPTest"
+
+    test_remote = "/opt/active/sites/acm01vegas/ActiveNetServlet/logs"
+    test_remote2 = "/opt/active/ActiveNet/perf"
+
 
     threads = []  # 多线程
 
     print("Begin......")
 
-    for i in range(1, 2):
+
+    for i in range(19, 20):
 
         if i < 10:
-            host = 'qaneolglin0' + str(i) + '.dev.activenetwork.com'
+            host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
         else:
-            host = 'qaneolglin' + str(i) + '.dev.activenetwork.com'
+            host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
-        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
-        a.start()
+        # a = threading.Thread(target=upload, args=(host, username, passwd,  IgnitecacheXml_srcfile, IgnitecacheXml_desfile))
+        # b = threading.Thread(target=upload, args=(host, username, passwd,  ServiceProperties_localfile, ServiceProperties_remotefile))
+        # b = threading.Thread(target=download, args=(host, username, passwd,  test_local, test_remote))
+        # # a.start()
+        # b.start()
+
+
+
+        # download(host, username, passwd,  test_local, test_remote)
+        upload(host, username, passwd,  test_local, test_remote2)
