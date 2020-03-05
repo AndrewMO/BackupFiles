@@ -3,7 +3,7 @@ package com.activenet.performance;
 import java.sql.*;
 
 public class GetCustomer {
-	String connectionUrl = "jdbc:sqlserver://dev-neoload-01w.dev.activenetwork.com;database=ActiveNetPerformance;";
+	String connectionUrl = "jdbc:sqlserver://dev-perfqa-01w.dev.activenetwork.com;database=ActiveNetPerformance;";
 	String username = "recware";
 	String password = "safari";
 
