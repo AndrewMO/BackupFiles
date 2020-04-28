@@ -1,0 +1,622 @@
+jenkins:
+  host: dev-perfqa-02w.dev.activenetwork.com
+  port: 8080
+  account: admin
+  password: 123!perf
+
+ENV:
+  endurancecui:
+    HOSTNAME: endurancecui
+    SERVICENAME: endurance-cui
+    NODES: 25
+    F5: aw_perf_endurancecui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  checkoutcui:
+    HOSTNAME: checkoutcui
+    SERVICENAME: checkout-cui
+    NODES: 25  
+    F5: aw_perf_checkoutcui_pool
+    BASE: VM
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  user: 
+    HOSTNAME: user
+    SERVICENAME: foundation-user-service
+    NODES: 25 
+    F5: aw_perf_user_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  order:
+    HOSTNAME: order
+    SERVICENAME: order-management-service
+    NODES: 25
+    F5: aw_perf_order_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  agency:
+    HOSTNAME: agency
+    SERVICENAME: agency-management-service
+    NODES: 25   
+    F5: aw_perf_agency_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  campscui:
+    HOSTNAME: campscui
+    SERVICENAME: camps-cui
+    NODES: 8    
+    F5: aw_perf_campscui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  campssessionmanagementservice:
+    HOSTNAME: campssession
+    SERVICENAME: camps-session-management-service
+    NODES: 16   
+    F5: aw_perf_campssession_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  campsui: 
+    HOSTNAME: campsui
+    SERVICENAME: fnd-webserver-camps
+    NODES: 8
+    F5: aw_prod_campsui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  campssui:
+    HOSTNAME: campsselfui
+    SERVICENAME: fnd-webserver-camps-ssui
+    NODES: 4
+    F5: aw_perf_campsselfui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  checkout: 
+    HOSTNAME: checkout
+    SERVICENAME: checkout-service
+    NODES: 25  
+    F5: aw_perf_checkout_pool 
+    BASE: VM
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  commerce: 
+    HOSTNAME: commerce
+    SERVICENAME: commerce-service
+    NODES: 4    
+    F5: aw_perf_commerce_pool
+    BASE: K8s
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+    NAMESPACE: perf-awplatform
+  eas: 
+    HOSTNAME: eventapp
+    SERVICENAME: eventapp-management-service
+    NODES: 4    
+    F5: aw_perf_eventapp_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  endurance: 
+    HOSTNAME: endurance
+    SERVICENAME: endurance-management-service
+    NODES: 4   
+    F5: aw_perf_endurance_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  ess: 
+    HOSTNAME: emailsend
+    SERVICENAME: email-sending-service
+    NODES: 4    
+    F5: aw_perf_emailsend_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  event: 
+    HOSTNAME: event
+    SERVICENAME: event-management-service
+    NODES: 8
+    F5: aw_perf_event_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  email:
+    HOSTNAME: email
+    SERVICENAME: foundation-email-service
+    NODES: 4  
+    F5: aw_perf_email_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  mobileui: 
+    HOSTNAME: mobileui
+    SERVICENAME: fnd-webserver-mobile
+    NODES: 6    
+    F5: aw_perf_mobileui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  forms: 
+    HOSTNAME: forms
+    SERVICENAME: forms-service
+    NODES: 4    
+    F5: aw_perf_forms_pool
+    BASE: K8s
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+    NAMESPACE: perf-awplatform
+  ledger: 
+    HOSTNAME: ledger
+    SERVICENAME: ledger-service
+    NODES: 25
+    F5: aw_perf_ledger_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  myeventsui:
+    HOSTNAME: myeventsui
+    SERVICENAME: myevents-webui
+    NODES: 4
+    F5: aw_perf_myeventsui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  offer: 
+    HOSTNAME: offer
+    SERVICENAME: offer-service
+    NODES: 4
+    F5: aw_perf_offer_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  passport: 
+    HOSTNAME: passport
+    SERVICENAME: passport-service
+    NODES: 4
+    F5: aw_perf_passport_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  passportui: 
+    HOSTNAME: passportui
+    SERVICENAME: active-passport-server
+    NODES: 4
+    F5: aw_perf_passportui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  sports: 
+    HOSTNAME: sports
+    SERVICENAME: sports-management-service
+    NODES: 8
+    F5: aw_perf_sports_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  waiver: 
+    HOSTNAME: waiver
+    SERVICENAME: waiver-service
+    NODES: 25
+    F5: aw_perf_waiver_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  arc: 
+    HOSTNAME: timingcloud
+    SERVICENAME: timing-cloud-management-service
+    NODES: 4
+    F5: aw_perf_timingcloud_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  arcui: 
+    HOSTNAME: timingcloudui
+    SERVICENAME: fnd-webserver-timing-cloud
+    NODES: 4
+    F5: aw_perf_timingcloudui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  tps: 
+    HOSTNAME: timingplatform
+    SERVICENAME: timing-platform-service
+    NODES: 8
+    F5: aw_perf_timingplatform_pool
+    BASE: VM
+  results: 
+    HOSTNAME: results
+    SERVICENAME: results-service
+    NODES: 8
+    F5: aw_perf_results_pool
+    BASE: Container
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  resultscui: 
+    HOSTNAME: resultscui
+    SERVICENAME: results-ui
+    NODES: 8
+    F5: aw_perf_resultscui_pool
+    BASE: Container
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  activeworksui:
+    HOSTNAME: activeworksui
+    SERVICENAME: activeworks-webui
+    NODES: 4
+    F5: aw_perf_activeworksui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  api:
+    HOSTNAME: api
+    SERVICENAME: fnd-webserver-external-client-api
+    NODES: 4
+    F5: aw_perf_api_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  mq:
+    HOSTNAME: mq
+    SERVICENAME: open-mq
+    NODES: 2
+  myeventsportal:
+    HOSTNAME: myeventsportal
+    SERVICENAME: fnd-webserver-myevents
+    NODES: 8
+    F5: aw_perf_myeventsportal_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  tp:
+    HOSTNAME: tmpgsapp
+    SERVICENAME: fnd-webserver-myevents
+    NODES: 4
+  commerceui:
+    HOSTNAME: commerceui
+    SERVICENAME: commerce-admin-ui
+    NODES: 4
+    F5: aaw_perf_commerceui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  enduranceui:
+    HOSTNAME: enduranceui
+    SERVICENAME: fnd-webserver-endurance
+    NODES: 4
+    F5: aw_perf_enduranceui_pool
+    BASE: VM
+    ARCHITECTURE: CoreServer
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+  product-service:
+    HOSTNAME: product-service
+    SERVICENAME: product-service
+    NODES: 6
+    F5: http://product-perf-awplatform.aw.k8sw.dev.activenetwork.com/
+    BASE: K8s
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+    NAMESPACE: perf-awplatform
+  product:
+    HOSTNAME: product-service
+    SERVICENAME: product-service
+    NODES: 6
+    F5: http://product-perf-awplatform.aw.k8sw.dev.activenetwork.com/
+    BASE: K8s
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+    NAMESPACE: perf-awplatform
+  inventory:
+    HOSTNAME: inventory-service
+    SERVICENAME: inventory-service
+    NODES: 4
+    F5: http://inventory-perf-awplatform.aw.k8sw.dev.activenetwork.com/
+    BASE: K8s
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+    NAMESPACE: perf-awplatform
+  avs:
+    HOSTNAME: address-validation-service
+    SERVICENAME: address-validation-service
+    NODES: 2
+    F5: http://avs-perf-awplatform.aw.k8sw.dev.activenetwork.com/
+    BASE: K8s
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+    NAMESPACE: perf-awplatform
+  tax:
+    HOSTNAME: tax-service
+    SERVICENAME: tax-service
+    NODES: 4
+    F5: http://tax-perf-awplatform.aw.k8sw.dev.activenetwork.com/
+    BASE: K8s
+    ARCHITECTURE: SpringBoot
+    DOMAIN: w.aw.active.tan
+    PRODUCT: perf
+    NAMESPACE: perf-awplatform
+
+TESTS:
+  ECUI:
+      - endurancecui
+      - checkoutcui
+      - checkout
+      - order
+      - ledger
+      - commerce
+      - offer
+      - email
+      - ess
+      - event
+      - forms
+      - passport
+      - user
+      - waiver
+      - endurance
+  FullAwEnvCheck:
+      - endurancecui
+      - checkoutcui
+      - user
+      - order
+      - agency
+      - campscui
+      - csms
+      - campsui
+      - checkout
+      - commerce
+      - eas
+      - endurance
+      - ess
+      - event
+      - email
+      - mobileui
+      - forms
+      - ledger
+      - myevents
+      - offer
+      - passport
+      - passportui
+      - sports
+      - waiver
+      - arc
+      - arcui
+      - tps
+      - results
+      - resultscui
+      - activeworksui
+      - api
+      - myeventsportal
+      - commerceui
+  CCM_Daily_Perf_Test:
+      - campssessionmanagementservice
+      - campscui
+      - campsui
+      - campssui
+      - checkoutcui
+      - checkout
+      - order
+      - user
+      - email
+      - ess
+      - waiver
+      - ledger
+      - commerce
+      - product
+      - forms
+      - inventory
+      - avs
+      - tax
+  Endurance_Daily_Perf_Test:
+      - endurancecui
+      - event
+      - endurance
+      - enduranceui
+      - checkoutcui
+      - checkout
+      - order
+      - user
+      - email
+      - ess
+      - waiver
+      - ledger
+      - commerce
+      - product
+      - forms
+      - inventory
+      - avs
+      - tax
+  ANET_Daily_Perf_Test:
+      - servlet_version
+      - acm_cui_version
+      - new_cui_version
+MQ:
+  Queue:
+    - foundation.Heartbeat
+    - ProcessOrderQueue
+    - EmailSendingService.mail.send
+    - Email.MRRManagement
+    - ProspectiveRegistrationQueue
+    - foundation.Error
+    - Email.MRREventQueue
+    - foundation.Communications
+  Topic:
+    - foundation.Heartbeat
+    - Email.EventTopic
+
+ACCOUNT:
+  dev:
+    UserName: syang4
+    Password: Stone_214%%%%%%%%a
+  tan:
+    UserName: syang4
+    Password: Stone_214%%%%%%%%a
+  deploy:
+    UserName: deploy
+    Password: 123!deploy
+  db:
+    UserName: fnd_service
+    Password: 8uspeVayAtesweSw
+
+REGRESSION:
+  CCM_Daily_Perf_Test:
+    SummaryTable:
+      - avg_hits/s
+      - avg_pages/s
+      - avg_reqresponsetime
+      - avg_pageresponsetime
+      - avg_throughput
+      - total_pages
+      - total_hits
+      - total_users_launched
+      - total_throughput
+      - total_iterations_completed
+      - total_errors
+      - error_percentile
+      - total_logical_actions_errors
+      - total_alerts_percentage
+    Transactions:
+      AUI_Login: 2.18
+      PeopleTab: 4.34
+      SearchPeople: 3.27
+      ViewDetail: 4.18
+      ChooseOneSeason: 4.31
+      Case6_SeasonReporting: 81.5
+      Case7_FamilyView: 12.5
+      Case8_FDRPersonSearch: 0.18
+      Case12_FinanceTab: 7.28
+      Case31_FinanceCenter_1Y: 10.19
+      Case13_UpdateFinancialActivityReport: 6.07
+      Case14_UpdateRevenueReport: 11.6
+      Case15_UpdateTransactionReport: 27.9
+      Case16_ViewAccountReceivable: 5.21
+      Case22_NewJerseyGroupAssignment: 4.16
+      Case23_SupplementalForms: 12
+      AAS: 25.4
+      SessionSummaryReport: 122.2
+      CustomFinancialReport: 84.4
+      CustomFinancialReport_6M: 119.2
+      CustomFinancialReport_6M_ALLOCATION: 216.6
+      LandingCUI: 1.02
+      AddSessions: 2.12
+      Continue: 0.52
+      LookupAccount: 0.49
+      ParticipantOptions: 11.9
+      RegistrationForms: 10.48
+      Checkout: 1.95
+  Endurance_Daily_Perf_Test:
+    SummaryTable:
+      - avg_hits/s
+      - avg_pages/s
+      - avg_reqresponsetime
+      - avg_pageresponsetime
+      - avg_throughput
+      - total_pages
+      - total_hits
+      - total_users_launched
+      - total_throughput
+      - total_iterations_completed
+      - total_errors
+      - error_percentile
+      - total_logical_actions_errors
+      - total_alerts_percentage
+    Transactions:
+      Landing: 0.098
+      SelectCategory: 0.390
+      Email: 0.029
+      CompleteForm: 1.91
+      Checkout: 1.93
+  ANET_Daily_Perf_Test:
+    SummaryTable:
+      - avg_hits/s
+      - avg_pages/s
+      - avg_reqresponsetime
+      - avg_pageresponsetime
+      - avg_throughput
+      - total_pages
+      - total_hits
+      - total_users_launched
+      - total_throughput
+      - total_iterations_completed
+      - total_errors
+      - error_percentile
+      - total_logical_actions_errors
+      - total_alerts_percentage
+    Transactions:
+      AUI_Enroll_Landing: 2.18
+      AUI_Enroll_Signin: 4.34
+      AUI_Enroll_WorkStation: 3.27
+      AUI_Enroll_FrontDesk: 4.18
+      AUI_Enroll_Enroll: 4.31
+      AUI_Enroll_SearchActivity: 81.5
+      AUI_Enroll_SelectActivity: 12.5
+      AUI_Enroll_FindCustpmer: 0.18
+      AUI_Enroll_SelectCustomer: 7.28
+      AUI_Enroll_EnrollAndPay: 10.19
+      AUI_Enroll_SelectPayer: 6.07
+      AUI_Enroll_PayAndFinish: 11.6
+      AUI_Enroll_Logout: 27.9
+      AUI_Registration_Login: 5.21
+      AUI_Registration_AUIFrontDesk: 4.16
+      AUI_Registration_AUIRegistration: 12
+      AUI_Registration_Logout: 25.4
+      CUI_Enroll_LandingCUI: 122.2
+      CUI_Enroll_EnrollActivity_1: 84.4
+      CUI_Enroll_EnrollActivity_2: 119.2
+      CUI_Enroll_ShoppingCart: 216.6
+      CUI_Enroll_ViewReceipt: 1.02
+      CUI_Enroll_SignOut: 2.12
+      OpenAPI_Retrieve_Activity_Category_Information: 0.52
+      OpenAPI_Retrieve_Activity_Detail_Information: 0.49
+      OpenAPI_Retrieve_Activity_Enrollment_Data: 11.9
+      OpenAPI_Retrieve_Activity_Fee_Information: 10.48
+      OpenAPI_Retrieve_Activity_Summary_Information: 1.95
+      OpenAPI_Retrieve_Activity_Type_Information: 0.14
+      OpenAPI_Retrieve_Customer_Information: 0.52
+      OpenAPI_Retrieve_Customer_Question: 0.49
+      OpenAPI_Retrieve_Customer_Question_Answer_Data: 11.9
+      OpenAPI_Retrieve_Membership_Category_Information: 11.9
+      OpenAPI_Retrieve_Other_Category_Information: 10.48
+      OpenAPI_Retrieve_Parent_Season_Information: 1.95
+      OpenAPI_Retrieve_Sites_Information: 0.14
