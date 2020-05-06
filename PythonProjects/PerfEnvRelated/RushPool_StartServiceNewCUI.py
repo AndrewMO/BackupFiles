@@ -42,6 +42,7 @@ def ssh2(host, username, passwd, cmd):
 if __name__ == '__main__':
 
     cmd = ['cd /opt/active/sites/acm01vegasjetty/ActiveNetCUI/config;./start_service.sh']  # 你要执行的命令列表
+    cmd_check = ['less /opt/active/sites/acm01vegasjetty/ActiveNetCUI/config/service.properties | grep logLevel']  # 你要执行的命令列表
 
     username = "deploy"  # 用户名
 
@@ -60,4 +61,5 @@ if __name__ == '__main__':
             host1 = 'perf-activenet-cui-' + str(i) + 'w.an.active.tan'
 
         a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd))
+        # a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd_check))
         a.start()

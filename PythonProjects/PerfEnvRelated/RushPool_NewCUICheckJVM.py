@@ -26,7 +26,7 @@ def ssh2(host, username, passwd, cmd):
             # 屏幕输出
 
             for o in out:
-                print("%s service status : %s" % (host, o))
+                print("%s status : %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -39,7 +39,8 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    cmd = ['ps -ef|grep java|grep -v grep|grep ActiveNetCUI']  # 你要执行的命令列表
+    # cmd = ['ps -ef|grep java|grep -v grep|grep ActiveNetCUI']  # 你要执行的命令列表
+    cmd = ['less /opt/active/sites/acm01vegasjetty/ActiveNetCUI/config/service.properties | grep logLevel']  # 你要执行的命令列表
 
     # cmd = ['ps -ef|grep java|grep -v grep']  # 你要执行的命令列表
 

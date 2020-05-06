@@ -7,7 +7,8 @@ import datetime
 import threading
 import os
 
-def upload(host, username, passwd,  local, remote, file_type):
+
+def upload(host, username, passwd, local, remote, file_type):
     try:
 
         trans = paramiko.Transport((host, 22))
@@ -15,9 +16,9 @@ def upload(host, username, passwd,  local, remote, file_type):
         sftp = paramiko.SFTPClient.from_transport(trans)
 
         if file_type == 1:
-            print(' upload file on %s Start %s ' % ( host, datetime.datetime.now()))
+            print(' upload file on %s Start %s ' % (host, datetime.datetime.now()))
             sftp.put(local, remote)
-            print('upload file on %s End %s ' % ( host, datetime.datetime.now()))
+            print('upload file on %s End %s ' % (host, datetime.datetime.now()))
 
         elif file_type == 2:
 
@@ -35,7 +36,7 @@ def upload(host, username, passwd,  local, remote, file_type):
 
     except Exception as e:
 
-        print('%s\t connect  error\n' %(host))
+        print('%s\t connect  error\n' % (host))
         print("-----------ExceptLog-----------")
         print(e)
 
@@ -43,7 +44,7 @@ def upload(host, username, passwd,  local, remote, file_type):
         trans.close()
 
 
-def download(host, username, passwd,  local, remote, file_type):
+def download(host, username, passwd, local, remote, file_type):
     try:
 
         trans = paramiko.Transport((host, 22))
@@ -63,11 +64,11 @@ def download(host, username, passwd,  local, remote, file_type):
                 sftp.get(os.path.join(remote, f), os.path.join(local, f))
                 print('download file %s on %s End %s ' % (str(f), host, datetime.datetime.now()))
         else:
-            raise Exception('invalid file_type')
+            raise Exception('invalid document type')
 
     except Exception as e:
 
-        print('%s\t connect  error\n' %(host))
+        print('%s\t connect  error\n' % (host))
         print("-----------ExceptLog-----------")
         print(e)
 
@@ -81,43 +82,51 @@ if __name__ == '__main__':
 
     passwd = "123!deploy"  # 密码
 
-    test_local = "/Users/ajia/Documents/tmp/FTPTest"
-    test_local_file = "/Users/ajia/Documents/tmp/FTPTest/test.txt"
 
-    test_remote = "/opt/active/sites/perf03/ActiveNetServlet/logs"
-    test_remote_file = "/opt/active/ActiveNet/perf/test.txt"
+    local_newcui_serviceproperties_download = '/Users/ajia/Documents/tmp/Settings/NewCUILogLevel/old/service.properties'
+    local_newcui_serviceproperties_upload = '/Users/ajia/Documents/tmp/Settings/NewCUILogLevel/new/service.properties'
+    remote_newcui_serviceproperties = '/opt/active/sites/acm01vegasjetty/ActiveNetCUI/config/service.properties'
 
-
-    threads = []  # 多线程
-
-    print("Begin......")
-
-    # for i in range(1, 3):
+    # print("Download files......")
+    #
+    # for i in range(1, 2):
+    #     # for i in range(20, 21):
     #
     #     if i < 10:
-    #         host = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
+    #         host_newcui = 'perf-activenet-cui-0' + str(i) + 'w.an.active.tan'
     #     else:
-    #         host = 'perf-ignite-' + str(i) + 'w.an.active.tan'
+    #         host_newcui = 'perf-activenet-cui-' + str(i) + 'w.an.active.tan'
+    #
+    #     print(host_newcui)
+    #
+    #     # download(host_newcui, username, passwd, local_jettyxml, remote_jettyxml, 1)
+    #     download(host_newcui, username, passwd, local_newcui_serviceproperties_download, remote_newcui_serviceproperties, 1)
 
-    for i in range(19, 20):
+
+
+    print("Upload files......")
+    for i in range(1, 9):
+        # for i in range(20, 21):
 
         if i < 10:
-            host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            host_newcui = 'perf-activenet-cui-0' + str(i) + 'w.an.active.tan'
         else:
-            host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host_newcui = 'perf-activenet-cui-' + str(i) + 'w.an.active.tan'
 
-        #upload, file =1, folder = 2
-        #file
-        a = threading.Thread(target=upload, args=(host, username, passwd,  test_local_file, test_remote, 1))
-        #folder
-        # a = threading.Thread(target=upload, args=(host, username, passwd, test_local, test_remote, 2))
-        a.start()
-        a.join()
+        print(host_newcui)
 
-        #download, file =1, folder = 2
-        #file
-        # b = threading.Thread(target=upload, args=(host, username, passwd,  test_local_file, test_remote_file, 1))
-        #folder
-        # b = threading.Thread(target=download, args=(host, username, passwd,  test_local, test_remote, 2))
-        # b.start()
-        # b.join()
+        # upload(host_newcui, username, passwd, local_jettyxml_new, remote_jettyxml, 1)
+        upload(host_newcui, username, passwd, local_newcui_serviceproperties_upload, remote_newcui_serviceproperties, 1)
+
+
+
+
+
+
+
+
+
+
+
+
+

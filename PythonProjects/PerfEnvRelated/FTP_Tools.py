@@ -81,14 +81,28 @@ if __name__ == '__main__':
 
     passwd = "123!deploy"  # 密码
 
-    test_local = "/Users/ajia/Documents/tmp/FTPTest"
-    test_local_file = "/Users/ajia/Documents/tmp/FTPTest/test.txt"
+    # test_local = "/Users/ajia/Documents/tmp/FTPTest"
+    # test_local_file = "/Users/ajia/Documents/tmp/FTPTest/test.txt"
+    #
+    # test_remote = "/opt/active/sites/perf03/ActiveNetServlet/logs"
+    # test_remote_file = "/opt/active/ActiveNet/perf/test.txt"
+    #
+    #
+    # local_file = "/Users/ajia/Documents/tmp/Settings/atmoic/ignite-cache.xml"
+    # # remote_file = "/opt/active/sites/acm01vegas/ActiveNetServlet/config/ignite-cache.xml"
+    # remote_file = "/opt/active/sites/ignite01/ActiveNetServlet/config/ignite-cache.xml"
+    #
+    #
+    # local_dir_ignite = '/Users/ajia/Documents/tmp/init_log/ignite03'
+    # local_dir_19 = '/Users/ajia/Documents/tmp/init_log/19'
+    # local_dir_20 = '/Users/ajia/Documents/tmp/init_log/20'
+    #
+    # remote_dir_ignite = '/opt/active/sites/ignite01/ActiveNetServlet/logs'
+    # remote_dir_19 = '/opt/active/sites/acm01vegas/ActiveNetServlet/logs'
+    # remote_dir_20 = '/opt/active/sites/acm01vegas/ActiveNetServlet/logs'
 
-    test_remote = "/opt/active/sites/perf03/ActiveNetServlet/logs"
-    test_remote_file = "/opt/active/ActiveNet/perf/test.txt"
 
-
-    threads = []  # 多线程
+    # threads = []  # 多线程
 
     print("Begin......")
 
@@ -99,25 +113,55 @@ if __name__ == '__main__':
     #     else:
     #         host = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
-    for i in range(19, 20):
+    for i in range(1, 2):
+    # for i in range(20, 21):
 
         if i < 10:
             host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
         else:
             host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
+        print(host)
+
+        local_jettyxml = '/Users/ajia/Documents/tmp/3000test/pre/jetty.xml'
+        remote_jettyxml = '/opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/jetty.xml'
+
+        local_serviceproperties = '/Users/ajia/Documents/tmp/3000test/pre/service.properties'
+        remote_serviceproperties = '/opt/active/sites/acm01vegasjetty/ActiveNetServlet/config/service.properties'
+
+        download(host, username, passwd,  local_jettyxml, remote_jettyxml, 1)
+        download(host, username, passwd,  local_serviceproperties, remote_serviceproperties, 1)
+
+
+
+        local_jettyxml_new = '/Users/ajia/Documents/tmp/3000test/new/jetty.xml'
+        local_serviceproperties_new = '/Users/ajia/Documents/tmp/3000test/new/service.properties'
+
+
+
+
+
+    # for i in range(3, 4):
+    #
+    #     if i < 10:
+    #         host = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
+    #     else:
+    #         host = 'perf-ignite-' + str(i) + 'w.an.active.tan'
+
         #upload, file =1, folder = 2
         #file
-        a = threading.Thread(target=upload, args=(host, username, passwd,  test_local_file, test_remote_file, 1))
+        # a = threading.Thread(target=upload, args=(host, username, passwd,  test_local_file, test_remote_file, 1))
         #folder
         # a = threading.Thread(target=upload, args=(host, username, passwd, test_local, test_remote, 2))
-        a.start()
-        a.join()
+        # a.start()
+        # a.join()
 
         #download, file =1, folder = 2
         #file
-        # b = threading.Thread(target=upload, args=(host, username, passwd,  test_local_file, test_remote_file, 1))
+        # b = threading.Thread(target=upload, args=(host, username, passwd,  local_file, remote_file, 1))
         #folder
-        # b = threading.Thread(target=download, args=(host, username, passwd,  test_local, test_remote, 2))
+        # b = threading.Thread(target=download, args=(host, username, passwd,  local_dir, remote_dir, 2))
         # b.start()
         # b.join()
+
+

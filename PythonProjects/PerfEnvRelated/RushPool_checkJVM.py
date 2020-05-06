@@ -43,6 +43,7 @@ if __name__ == '__main__':
     # cmd = ['pwd']  # 你要执行的命令列表
 
     cmd_jvm = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1']  # 你要执行的命令列表
+    cmd_ip = ['curl bot.whatismyipaddress.com']  # 你要执行的命令列表
     cmd = ['ps -ef |grep java | grep -v grep | grep ActiveNetServlet | awk \'{print $14}\' | awk -F \'/\' \'{print $7}\''] # 你要执行的命令列表
 
     # cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
@@ -71,7 +72,7 @@ if __name__ == '__main__':
 
     print("Begin......Cache")
 
-    for i in range(1, 4):
+    for i in range(1, 3):
 
         if i < 10:
             host2 = 'perf-ignite-0' + str(i) + 'w.an.active.tan'

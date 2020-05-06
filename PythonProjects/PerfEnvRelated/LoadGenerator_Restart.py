@@ -45,14 +45,14 @@ if __name__ == '__main__':
 
     username = "ajia"  # 用户名
 
-    passwd = "Nwy7frxy@f"  # 密码
+    passwd = "Nwy7frxy@ee"  # 密码
 
     threads = []  # 多线程
 
     print("Begin......")
 
     # for i in range(1, 41):
-    for i in range(27, 41):
+    for i in range(6, 41):
 
         if i < 10:
             host = 'qaneolglin0' + str(i) + '.dev.activenetwork.com'

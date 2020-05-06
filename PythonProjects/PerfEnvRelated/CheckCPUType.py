@@ -42,8 +42,10 @@ if __name__ == '__main__':
 
     # cmd = ['pwd']  # 你要执行的命令列表
 
-    cmd1 = ['cat /proc/cpuinfo | grep "processor" | sort | uniq | wc -l']  # CPU核心数
-    cmd3 = ['cat /proc/cpuinfo | grep name | sort | uniq']  # 查看CPU型号
+    cmd_corenumber = ['cat /proc/cpuinfo | grep "processor" | sort | uniq | wc -l']  # CPU核心数
+    cmd_CPUtype = ['cat /proc/cpuinfo | grep name | sort | uniq']  # 查看CPU型号
+    cmd_OSVersion = ['cat /etc/issue']  # 查看CPU型号
+
     cmd2 = ['cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l;cat /proc/cpuinfo | grep "core id" | sort | uniq | wc -l;cat /proc/cpuinfo | grep "processor" | sort | uniq | wc -l']  # 你要执行的命令列表
 
     # cat /proc/cpuinfo | grep name | sort | uniq  查看CPU型号
@@ -66,14 +68,23 @@ if __name__ == '__main__':
 
     print("Start Checking......")
 
-    for i in range(1, 19):
+    for i in range(1, 9):
 
         if i < 10:
-            host1 = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+            # perf-activenet-cui-01w.an.active.tan
+            host1 = 'perf-activenet-cui-0' + str(i) + 'w.an.active.tan'
         else:
-            host1 = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+            host1 = 'perf-activenet-cui-' + str(i) + 'w.an.active.tan'
 
-        a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd1))
+    # for i in range(1, 19):
+    #
+    #     if i < 10:
+    #         host1 = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
+    #     else:
+    #         host1 = 'perf-activenet-' + str(i) + 'w.an.active.tan'
+
+        # a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd_CPUtype))
+        a = threading.Thread(target=ssh2, args=(host1, username, passwd, cmd_corenumber))
         a.start()
 
 

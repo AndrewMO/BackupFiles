@@ -7,7 +7,8 @@ import datetime
 import threading
 import os
 
-def upload(host, username, passwd,  local, remote, file_type):
+
+def upload(host, username, passwd, local, remote, file_type):
     try:
 
         trans = paramiko.Transport((host, 22))
@@ -15,9 +16,9 @@ def upload(host, username, passwd,  local, remote, file_type):
         sftp = paramiko.SFTPClient.from_transport(trans)
 
         if file_type == 1:
-            print(' upload file on %s Start %s ' % ( host, datetime.datetime.now()))
+            print(' upload file on %s Start %s ' % (host, datetime.datetime.now()))
             sftp.put(local, remote)
-            print('upload file on %s End %s ' % ( host, datetime.datetime.now()))
+            print('upload file on %s End %s ' % (host, datetime.datetime.now()))
 
         elif file_type == 2:
 
@@ -35,7 +36,7 @@ def upload(host, username, passwd,  local, remote, file_type):
 
     except Exception as e:
 
-        print('%s\t connect  error\n' %(host))
+        print('%s\t connect  error\n' % (host))
         print("-----------ExceptLog-----------")
         print(e)
 
@@ -43,7 +44,7 @@ def upload(host, username, passwd,  local, remote, file_type):
         trans.close()
 
 
-def download(host, username, passwd,  local, remote, file_type):
+def download(host, username, passwd, local, remote, file_type):
     try:
 
         trans = paramiko.Transport((host, 22))
@@ -63,11 +64,11 @@ def download(host, username, passwd,  local, remote, file_type):
                 sftp.get(os.path.join(remote, f), os.path.join(local, f))
                 print('download file %s on %s End %s ' % (str(f), host, datetime.datetime.now()))
         else:
-            raise Exception('invalid file_type')
+            raise Exception('invalid document type')
 
     except Exception as e:
 
-        print('%s\t connect  error\n' %(host))
+        print('%s\t connect  error\n' % (host))
         print("-----------ExceptLog-----------")
         print(e)
 
@@ -81,43 +82,38 @@ if __name__ == '__main__':
 
     passwd = "123!deploy"  # 密码
 
-    test_local = "/Users/ajia/Documents/tmp/FTPTest"
-    test_local_file = "/Users/ajia/Documents/tmp/FTPTest/test.txt"
-
-    test_remote = "/opt/active/sites/perf03/ActiveNetServlet/logs"
-    test_remote_file = "/opt/active/ActiveNet/perf/test.txt"
+    local_dir = '/Users/ajia/Documents/tmp/3000test/dump'
+    remote_dir_servlet = '/opt/active/ActiveNet/perf/3000test/servlet'
+    remote_dir_newcui = '/opt/active/ActiveNet/perf/3000test/newcui'
 
 
-    threads = []  # 多线程
+    print("Download dir......")
 
-    print("Begin......")
-
-    # for i in range(1, 3):
-    #
-    #     if i < 10:
-    #         host = 'perf-ignite-0' + str(i) + 'w.an.active.tan'
-    #     else:
-    #         host = 'perf-ignite-' + str(i) + 'w.an.active.tan'
-
-    for i in range(19, 20):
+    for i in range(1, 2):
+        # for i in range(20, 21):
 
         if i < 10:
             host = 'perf-activenet-0' + str(i) + 'w.an.active.tan'
         else:
             host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
-        #upload, file =1, folder = 2
-        #file
-        a = threading.Thread(target=upload, args=(host, username, passwd,  test_local_file, test_remote, 1))
-        #folder
-        # a = threading.Thread(target=upload, args=(host, username, passwd, test_local, test_remote, 2))
-        a.start()
-        a.join()
+        print(host)
 
-        #download, file =1, folder = 2
-        #file
-        # b = threading.Thread(target=upload, args=(host, username, passwd,  test_local_file, test_remote_file, 1))
-        #folder
-        # b = threading.Thread(target=download, args=(host, username, passwd,  test_local, test_remote, 2))
-        # b.start()
-        # b.join()
+        download(host, username, passwd, local_dir, remote_dir_servlet, 2)
+        download(host, username, passwd, local_dir, remote_dir_newcui, 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

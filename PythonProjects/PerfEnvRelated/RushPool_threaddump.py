@@ -31,7 +31,7 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
             JavaPid = ''.join(out).rstrip('\n')
 
         threaddumpcmd = []
-        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/1914releaseServlet' + ServerNo +'threaddumphighCPU02.txt' )
+        threaddumpcmd.append('cd ' + JavaHome +';'+'./jstack -l ' + JavaPid + ' >' + threadfilepath + '/03_1800_Servlet_' + ServerNo +'w_threaddump.txt' )
         # ./jstack -l 9672  >/opt/active/ActiveNet/perf/perf08wthreaddump.txt
 
         for m2 in threaddumpcmd:
@@ -60,7 +60,7 @@ def threaddump(host, username, passwd, getJavaPid, JavaHome, threadfilepath):
 if __name__ == '__main__':
 
     getJavaPid = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1|awk \'{print $2}\'']  # 获取JavaPid的命令
-    threadfilepath = "/opt/active/ActiveNet/perf" #dump文件存放路径
+    threadfilepath = "/opt/active/ActiveNet/perf/3000test/servlet" #dump文件存放路径
     JavaHome = "/usr/java/jdk8_192-1.8_192/bin" # 进入java路径
 
     username = "deploy"  # 用户名

@@ -41,12 +41,13 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    cmd = ["sudo sed -i 's/10.230.49.33/#10.230.49.33/' /etc/hosts;sudo cat /etc/hosts | grep '10.230.49.33' "]  # 关闭ATS
-    # cmd = ["sudo sed -i 's/#10.230.49.33/10.230.49.33/' /etc/hosts;sudo cat /etc/hosts | grep '10.230.49.33' "]  # 打开ATS
+    cmd_ATSOff = ["sudo sed -i 's/10.230.49.33/#10.230.49.33/' /etc/hosts;sudo cat /etc/hosts | grep '10.230.49.33' "]  # 关闭ATS
+    cmd_ATSOn = ["sudo sed -i 's/#10.230.49.33/10.230.49.33/' /etc/hosts;sudo cat /etc/hosts | grep '10.230.49.33' "]  # 打开ATS
+    cmd_CheckATS = ["sudo less /etc/hosts | grep '10.230.49.33' "]
 
     username = "ajia"  # 用户名
 
-    passwd = "Nwy7frxy@f"  # 密码
+    passwd = "Nwy7frxy@ee"  # 密码
 
     threads = []  # 多线程
 
@@ -59,5 +60,7 @@ if __name__ == '__main__':
         else:
             host = 'qaneolglin' + str(i) + '.dev.activenetwork.com'
 
-        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
+        # a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_ATSOff))
+        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_ATSOn))
+        # a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_CheckATS))
         a.start()

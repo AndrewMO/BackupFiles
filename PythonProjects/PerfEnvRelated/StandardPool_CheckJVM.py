@@ -28,7 +28,7 @@ def ssh2(host, username, passwd, cmd):
 
             for o in out:
                 #print(o)
-                print("%s service status :  %s" % (host, o))
+                print("%s  :  %s" % (host, o))
 
         #print('%s\t start service OK\n' %(host))
 
@@ -41,7 +41,11 @@ def ssh2(host, username, passwd, cmd):
 
 if __name__ == '__main__':
 
-    cmd = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1'] # 你要执行的命令列表
+    cmd_servlet = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1'] # 你要执行的命令列表
+    cmd_cache = ['ps -ef|grep java|grep -v grep|grep ActiveNetServlet1'] # 你要执行的命令列表
+    cmd_getorgname = [
+        'ps -ef|grep java|grep -v grep|grep ActiveNetServlet1 | awk \'{print $13}\' | awk -F \'/\' \'{print $5}\'']
+
 
 
 
@@ -60,7 +64,8 @@ if __name__ == '__main__':
         else:
             host = 'perf-activenet-' + str(i) + 'w.an.active.tan'
 
-        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
+        # a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_getorgname))
+        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_servlet))
         a.start()
 
 
@@ -87,5 +92,5 @@ if __name__ == '__main__':
         else:
             host = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
-        b = threading.Thread(target=ssh2, args=(host, username, passwd, cmd))
+        b = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_cache))
         b.start()

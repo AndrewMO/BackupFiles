@@ -37,6 +37,7 @@ if __name__ == '__main__' :
 
     # for i in range(2, 20):
     for i in range(1, 19):
+    # for i in range(1, 2):
         if (i < 10):
             urlstr = "http://perf-activenet-0"+str(i)+"w.an.active.tan:3000/"+orgname+"/servlet/adminlogin.sdi"
             # logging.debug('i is '+ str(i) + ' , url is ' + urlstr)
