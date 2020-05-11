@@ -19,7 +19,7 @@ begin
     update systeminfo set KEYWORDVALUE = 'false' where KEYWORD = 'enable_pci_captcha'
 end
 
-
+select * from dbo.systeminfo where keyword = 'enable_pci_captcha'
 
 
 -- Sites DB setting
@@ -43,4 +43,6 @@ else
 begin
     update systeminfo set KEYWORDVALUE = 'false' where KEYWORD = 'enable_pci_captcha'
 end
+
+select * from dbo.systeminfo where keyword = 'enable_pci_captcha'
 

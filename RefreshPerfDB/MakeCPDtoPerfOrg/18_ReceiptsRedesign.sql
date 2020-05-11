@@ -10,3 +10,6 @@ ELSE
 BEGIN
     update systeminfo set KEYWORDVALUE = 'true' where KEYWORD = 'enable_new_receipt_redirect'
 END
+
+
+select * from dbo.systeminfo where keyword = 'enable_new_receipt_redirect'

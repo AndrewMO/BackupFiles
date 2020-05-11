@@ -12,4 +12,6 @@ BEGIN
 END
 
 
+select * from systeminfo where KEYWORD = 'enable_new_cui_activity_search_redirect'
+
 

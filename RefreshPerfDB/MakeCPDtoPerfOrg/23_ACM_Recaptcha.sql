@@ -12,4 +12,7 @@ begin
 end
 
 
+select * from dbo.systeminfo where keyword = 'enable_recaptcha'
+
+
 
