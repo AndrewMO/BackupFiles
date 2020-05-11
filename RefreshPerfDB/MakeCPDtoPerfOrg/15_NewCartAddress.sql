@@ -10,3 +10,6 @@ else
 BEGIN
     update systeminfo set KEYWORDVALUE = 'https://ancperf.apm.activecommunities.com' where KEYWORD = 'new_cui_url'
 END
+
+
+select * from systeminfo where KEYWORD = 'new_cui_url'
