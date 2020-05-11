@@ -30,6 +30,9 @@ END
 
 
 
+select * from SYSTEMINFO where keyword in ('enable_new_cui_activity_search_redirect', 'enable_activity_enrollment_redesign')
+
+
 
 
 
