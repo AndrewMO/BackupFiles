@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     username = "ajia"  # 用户名
 
-    passwd = "Nwy7frxy@ee"  # 密码
+    passwd = "Nwy7frxy@anet01"  # 密码
 
     threads = []  # 多线程
 
@@ -61,6 +61,6 @@ if __name__ == '__main__':
             host = 'qaneolglin' + str(i) + '.dev.activenetwork.com'
 
         # a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_ATSOff))
-        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_ATSOn))
-        # a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_CheckATS))
+        # a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_ATSOn))
+        a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_CheckATS))
         a.start()
