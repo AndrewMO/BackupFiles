@@ -32,19 +32,18 @@ def check_version_pkg_on_remote(server, username, password, executable, remote_p
                 version_tmp = ""
                 continue
 
-        # print(versions)
-        # print("##################")
         # print(versions[:-1])
 
         # #versions should be ["19.13.0.066","19.14.0.037"]
-        # versions =[]
         if len(versions) <= 1:
-            print("-- only latest build on server %r --" %(server))
+            print("\033[0;37;40m%s\033[0m" % (server))
+            print("-- only latest build %r on server %r" %(versions[0], server))
+            print("#" * len(versions) * 15)
         else:
-            print("####################################################")
-            print("-- server --" % (server))
+            print("\033[0;37;40m%s\033[0m" % (server))
+            print("-" * len(versions) * 15)
             print(versions)
-            print("####################################################")
+            print("#" * len(versions) * 15)
 
     finally:
         c.remove_service()
@@ -68,7 +67,6 @@ if __name__ == '__main__':
                "ANACMP007a.active.tan", "ANACMP007b.active.tan", "ANACMP007c.active.tan",\
                "ANACMP007d.active.tan", "ANACMP008.active.tan", "ANACMP008a.active.tan", \
                "ANACMP008b.active.tan", "ANACMP008c.active.tan", "ANACMP008d.active.tan"]
-
     # servers = [ "ANACMP003.active.tan", "ANACMP003a.active.tan" ]
     username = "tan\\ajia"
     password = "Nwy7frxy@anet01"

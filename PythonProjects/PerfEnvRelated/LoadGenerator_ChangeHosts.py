@@ -3,12 +3,17 @@
 # !/usr/bin/python
 
 import paramiko
-
+import logging
 import threading
+logging.basicConfig(level=logging.CRITICAL, format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 
 def ssh2(host, username, passwd, cmd):
     try:
+
+        logger.debug("current server : %r" %(host))
 
         ssh = paramiko.SSHClient()
 
@@ -52,9 +57,10 @@ if __name__ == '__main__':
     threads = []  # 多线程
 
     print("Begin......")
+    logger.debug("Process Start")
 
+    # for i in range(27, 28):
     for i in range(27, 41):
-
         if i < 10:
             host = 'qaneolglin0' + str(i) + '.dev.activenetwork.com'
         else:
@@ -64,3 +70,5 @@ if __name__ == '__main__':
         # a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_ATSOn))
         a = threading.Thread(target=ssh2, args=(host, username, passwd, cmd_CheckATS))
         a.start()
+
+    logger.debug("Process End")

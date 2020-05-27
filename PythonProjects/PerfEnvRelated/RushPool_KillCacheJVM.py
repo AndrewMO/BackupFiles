@@ -6,7 +6,7 @@ import paramiko
 import threading
 
 
-def threaddump(host, username, passwd, getJavaPid, checkJVM):
+def kill_cahce_jvm(host, username, passwd, getJavaPid, checkJVM):
     try:
 
         ssh = paramiko.SSHClient()
@@ -84,7 +84,7 @@ if __name__ == '__main__':
         else:
             host1 = 'perf-ignite-' + str(i) + 'w.an.active.tan'
 
-        a = threading.Thread(target=threaddump, args=(host1, username, passwd, getJavaPid, checkJVM))
+        a = threading.Thread(target=kill_cahce_jvm, args=(host1, username, passwd, getJavaPid, checkJVM))
         a.start()
 
 

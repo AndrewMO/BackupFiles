@@ -1,0 +1,21 @@
+ENV:
+  perf_rushpool_AUI:
+    PREHOST: perf-activenet-
+    NODES: 18
+    DOMAIN: w.an.active.tan
+    PRODUCT: perf
+  perf_standardpool_AUI:
+    PREHOST: perf-activenet-
+    NODES: 2
+    DOMAIN: w.an.active.tan
+    PRODUCT: perf
+  perf_NewCUI:
+    PREHOST: perf-activenet-cui-
+    NODES: 8
+    DOMAIN: w.an.active.tan
+    PRODUCT: perf
+  perf_ignite:
+    PREHOST: perf-ignite-
+    NODES: 3
+    DOMAIN: w.an.active.tan
+    PRODUCT: perf

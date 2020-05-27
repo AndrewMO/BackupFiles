@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     orgnames = ["acm01vegasjetty", "acm01vegas", "perf01", "perf02", "perf01jetty", "ignite01", "share" ]
 
-    versionString = "20.06.0.03*"
+    versionString = "20.04*"
 
 
 
@@ -56,7 +56,7 @@ if __name__ == '__main__':
         cmd =[]
 
         cmd.append(cmdString)  # 你要执行的命令列表
-        print(orgname)
+        print("\033[0;37;40m%s\033[0m" % (orgname))
         print(cmd)
 
         username = "deploy"  # 用户名

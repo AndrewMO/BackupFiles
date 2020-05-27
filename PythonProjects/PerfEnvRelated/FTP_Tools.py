@@ -6,9 +6,15 @@ import paramiko
 import datetime
 import threading
 import os
+import logging
+logging.basicConfig(level=logging.CRITICAL, format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 def upload(host, username, passwd,  local, remote, file_type):
     try:
+        logger.debug("current server : %r " %(host))
+        logger.debug("current upload mode : %r" %('file' if file_type == 1 else 'floder'))
 
         trans = paramiko.Transport((host, 22))
         trans.connect(username=username, password=passwd)
@@ -45,6 +51,9 @@ def upload(host, username, passwd,  local, remote, file_type):
 
 def download(host, username, passwd,  local, remote, file_type):
     try:
+
+        logger.debug("current server : %r " % (host))
+        logger.debug("current download mode : %r" % ('file' if file_type == 1 else 'floder'))
 
         trans = paramiko.Transport((host, 22))
         trans.connect(username=username, password=passwd)

@@ -7,7 +7,8 @@ import requests
 import threading
 import logging
 import time
-# logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.CRITICAL, format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 # logging.disable(logging.CRITICAL)
 
 
@@ -29,8 +30,9 @@ def getResponse(url):
 if __name__ == '__main__' :
 
     # logging.debug('start of program')
+    logger.debug("start main program")
+    logger.debug("processing...")
 
-    print("processing...")
     thread = []
     orgname = ['perf01', 'perf01jetty', 'perf02', 'perf03', 'acm01vegas']
     # orgname = ['acm01vegas']
@@ -41,6 +43,7 @@ if __name__ == '__main__' :
 
     for org in orgname:
         for i in range(19, 21):
+            logger.debug("current org name: %r" %(org))
             if (i < 10):
                 urlstr = "http://perf-activenet-0"+str(i)+"w.an.active.tan:3000/"+org+"/servlet/adminlogin.sdi"
                 # logging.debug('i is '+ str(i) + ' , url is ' + urlstr)
@@ -50,7 +53,7 @@ if __name__ == '__main__' :
             a = threading.Thread(target=getResponse, args=(urlstr,))
             a.start()
 
-    # logging.debug('end of program')
+    logger.debug("end of main")
 
 
 

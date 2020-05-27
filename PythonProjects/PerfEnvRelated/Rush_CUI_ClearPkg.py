@@ -5,6 +5,9 @@
 from pypsexec.client import Client
 import threading
 import time
+import logging
+logging.basicConfig(level=logging.CRITICAL, format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 
 def clear_version_pkg_on_remote(server, username, password, executable, remote_path):
@@ -67,7 +70,7 @@ def clear_version_pkg_on_remote(server, username, password, executable, remote_p
 
 if __name__ == '__main__':
 
-    # servers = ["ANACMP007.active.tan"]
+    servers = ["ANACMP007.active.tan"]
     # servers = ["ANACMP003.active.tan", "ANACMP003a.active.tan", "ANACMP003b.active.tan",\
     #            "ANACMP004.active.tan", "ANACMP004a.active.tan", "ANACMP004b.active.tan", \
     #            "ANACMP005.active.tan", "ANACMP005a.active.tan", "ANACMP005b.active.tan", \
@@ -76,14 +79,6 @@ if __name__ == '__main__':
     #            "ANACMP007a.active.tan", "ANACMP007b.active.tan", "ANACMP007c.active.tan",\
     #            "ANACMP007d.active.tan", "ANACMP008.active.tan", "ANACMP008a.active.tan", \
     #            "ANACMP008b.active.tan", "ANACMP008c.active.tan", "ANACMP008d.active.tan"]
-    servers = ["ANACMP003b.active.tan",\
-               "ANACMP004.active.tan", "ANACMP004a.active.tan", "ANACMP004b.active.tan", \
-               "ANACMP005.active.tan", "ANACMP005a.active.tan", "ANACMP005b.active.tan", \
-               "ANACMP006.active.tan", "ANACMP006a.active.tan", "ANACMP006b.active.tan", \
-               "ANACMP006c.active.tan", "ANACMP006d.active.tan", "ANACMP007.active.tan", \
-               "ANACMP007a.active.tan", "ANACMP007b.active.tan", "ANACMP007c.active.tan",\
-               "ANACMP007d.active.tan", "ANACMP008.active.tan", "ANACMP008a.active.tan", \
-               "ANACMP008b.active.tan", "ANACMP008c.active.tan", "ANACMP008d.active.tan"]
 
     # servers = [ "ANACMP003.active.tan", "ANACMP003a.active.tan" ]
     username = "tan\\ajia"
@@ -99,7 +94,12 @@ if __name__ == '__main__':
     #cmd /c "rd /s /q E:\acm\_versions\19.14.0.041"
 
 
+    logger.debug("remote path: %r" %(remote_path))
+    logger.debug("executable: %r" %(executable))
+
+
     for server in servers:
+        logger.debug("current server: %r" %{server})
         t = threading.Thread(target=clear_version_pkg_on_remote, args=(server, username, password, executable, remote_path))
         t.start()
         t.join()
