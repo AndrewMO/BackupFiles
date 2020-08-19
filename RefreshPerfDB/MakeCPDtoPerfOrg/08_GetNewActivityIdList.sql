@@ -2,7 +2,7 @@
 use acm01vegasjetty
 
 select activity_id,activitynumber from activities
-where season_id in (42, 43, 44, 45)
+where season_id in (42, 45, 49, 50)
 and activitystatus = 0
 and hideoninternet > -1
 and onlineteamassign <> -1  

@@ -28,17 +28,17 @@ activitygender=0
 ,endingdate='12/31/2021' 
 ,keybrdentryenddate='12/30/1899'
 ,DONTRESERVEFACILITIES=-1
-where season_id in (42, 43, 44, 45) and activitystatus = 0
+where season_id in (42, 45, 49, 50) and activitystatus = 0
 
 update ACTIVITYREGISTRATIONWINDOWS set
-INTERNET_DATE='1/1/2018'
+INTERNET_DATE='1/1/2019'
 ,INTERNET_END_DATE='12/30/1899'
-,[KEYBOARD_ENTRY_DATE]='1/1/2018'
-,[NON_RES_KEYBOARD_ENTRY_DATE]='1/1/2018'
-,[MEMBER_KEYBOARD_ENTRY_DATE]='1/1/2018'
-,[NON_RES_INTERNET_DATE]='1/1/2018'
-,[MEMBER_INTERNET_DATE]='1/1/2018'
-where activity_id in (select activity_id from activities where season_id in (42, 43, 44, 45) and activitystatus = 0)
+,[KEYBOARD_ENTRY_DATE]='1/1/2019'
+,[NON_RES_KEYBOARD_ENTRY_DATE]='1/1/2019'
+,[MEMBER_KEYBOARD_ENTRY_DATE]='1/1/2019'
+,[NON_RES_INTERNET_DATE]='1/1/2019'
+,[MEMBER_INTERNET_DATE]='1/1/2019'
+where activity_id in (select activity_id from activities where season_id in (42, 45, 49, 50) and activitystatus = 0)
 
 update ACTIVITYSTATISTICS set number_open = 888 
-where activity_id in (select activity_id from activities where season_id in (42, 43, 44, 45) and activitystatus = 0)
+where activity_id in (select activity_id from activities where season_id in (42, 45, 49, 50) and activitystatus = 0)
